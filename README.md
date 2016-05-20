@@ -7,7 +7,7 @@
 - Done! :)
 
 ## Develop!
-- *_Before you start_*, make sure you run the following:
+- **Before you start**, make sure you run the following:
   - switch to master 
     - `git checkout master` 
   - get latest changes made by other teammates from master
@@ -18,9 +18,9 @@
   - do unfinished migrate
     - `rake db:migrate`
   - Done! :) 
-- Always *_make a new branch_* before starting to work on a new feature 
+- Always **make a new branch** before starting to work on a new feature 
   - Example: working a form
-    - Make sure you're making a new branch *from master branch*
+    - Make sure you're making a new branch **_from_ master branch**
       - `git branch`
     - Create a new branch 
       - `git checkout -b <type>/<description>`
