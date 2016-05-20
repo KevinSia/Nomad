@@ -1,4 +1,4 @@
-#Nomad - The perfect platform for ~lazy~ travelers
+#Nomad - The perfect platform for ~~lazy~~ travelers
 
 ## Getting started
 - Make a folder with a name of your choice
