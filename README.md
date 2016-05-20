@@ -20,10 +20,13 @@
   - Done! :) 
 - Always make a new branch before starting to work on a new feature 
   - Example: working a form
-    - Make sure you're making a new branch *from master branch* -> `git branch`
-    - Create a new branch -> `git checkout -b <type>/<description>`
+    - Make sure you're making a new branch *from master branch*
+      - `git branch`
+    - Create a new branch 
+      - `git checkout -b <type>/<description>`
       - Eg: `git checkout -b user/sign_in`
-    - *Commit often* with a meaningful commit message that tells what you've done
-    - Once done, `add`, `commit` and push to Github by doing `git push origin <branch-name>
+    - *Commit often* with a meaningful commit message that tells what you've done for this commit 
+    - Once done, `add`, `commit` and push to Github 
+      - `git push origin <branch-name>`
       - Eg: `git push origin user/sign_in`
       - *Do not* push/merge into master without making a pull request :)
