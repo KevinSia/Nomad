@@ -15,18 +15,20 @@
   - if there are conflicts (will be shown after `pulling`), inform other teammates.
   - install the gems
     - `bundle install`
-  - do unfinished migrate
+  - do unfinished migration
     - `rake db:migrate`
   - Done! :) 
 - Always **make a new branch** before starting to work on a new feature 
-  - Example: working a form
-    - Make sure you're making a new branch **_from_ master branch**
-      - `git branch`
-    - Create a new branch 
-      - `git checkout -b <type>/<description>`
-      - Eg: `git checkout -b user/sign_in`
-    - *Commit often* with a meaningful commit message that tells what you've done for this commit 
-    - Once done, `add`, `commit` and push to Github 
-      - `git push origin <branch-name>`
-      - Eg: `git push origin user/sign_in`
-      - *Do not* push/merge into master without making a pull request :)
+  - Make sure you're making a new branch **_from_ master branch**
+    - `git branch`
+  - Create a new branch 
+    - `git checkout -b <type>/<description>`
+    - Eg: `git checkout -b user/sign_in`
+  - *Commit often* with a meaningful commit message that tells what you've done for this commit 
+  - Once done, `add`, `commit` and push to Github 
+    - `git push origin <branch-name>`
+    - Eg: `git push origin user/sign_in`
+    - *Do not* push/merge into master without **making a pull request**
+- Something to do before **pushing** to Github
+  - `git status` to see files that you have made changes on
+  - `git diif HEAD` to see lines of codes that you have added/deleted
