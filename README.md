@@ -1,4 +1,4 @@
-#Nomad - The perfect platform for ~~lazy~~ travelers
+#Nomad - A platform for ~~lazy~~ travelers and planners
 
 ## Getting started
 - Make a folder with a name of your choice
@@ -18,7 +18,7 @@
   - do unfinished migrate
     - `rake db:migrate`
   - Done! :) 
-- Always make a new branch before starting to work on a new feature 
+- Always *make a new branch* before starting to work on a new feature 
   - Example: working a form
     - Make sure you're making a new branch *from master branch*
       - `git branch`
