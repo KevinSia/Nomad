@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day: MyString
+  description: MyText
+  estimated_time: MyString
+  location: MyString
+  price: MyString
+  references: MyString
+
+two:
+  day: MyString
+  description: MyText
+  estimated_time: MyString
+  location: MyString
+  price: MyString
+  references: MyString

@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522092057) do
+ActiveRecord::Schema.define(version: 20160523151154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "activities", force: :cascade do |t|
+    t.string   "day"
+    t.text     "description"
+    t.string   "estimated_time"
+    t.string   "location"
+    t.string   "price"
+    t.string   "references"
+    t.integer  "quest_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "activities", ["quest_id"], name: "index_activities_on_quest_id", using: :btree
 
   create_table "authentications", force: :cascade do |t|
     t.string   "uid"
@@ -26,6 +40,22 @@ ActiveRecord::Schema.define(version: 20160522092057) do
   end
 
   add_index "authentications", ["user_id"], name: "index_authentications_on_user_id", using: :btree
+
+  create_table "quests", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "duration"
+    t.string   "country"
+    t.string   "city"
+    t.string   "lower_price"
+    t.string   "upper_price"
+    t.string   "category"
+    t.integer  "user_id"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "quests", ["user_id"], name: "index_quests_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                     null: false
