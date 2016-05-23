@@ -11,6 +11,11 @@
     </ul>
   <% end %>
   <%= form_for @user do |form| %>
+    <div class='text-field'>
+      <%= form.label :first_name %>
+      <%= form.text_field :first_name %>
+    </div>
+
     <%= render partial: '/users/form', object: form %>
 
     <div class="submit-field">
