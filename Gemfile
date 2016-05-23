@@ -20,6 +20,9 @@ gem 'clearance'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# credentials
+gem 'figaro'
+
 # image upload
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'

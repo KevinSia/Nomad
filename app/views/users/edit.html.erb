@@ -1,0 +1,29 @@
+<h2>Edit profile</h2>
+<% if @user.errors.any? %>
+  <div class="alert alert-danger">
+    The form contains <%= pluralize(@user.errors.count, "error") %>.
+  </div>
+  <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<%= form_for @user do |form| %>
+  <div class='text-field'>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class='text-field'>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <%= render partial: '/users/form', object: form %>
+
+  <div class="submit-field">
+    <%= form.submit %>
+  </div>
+<% end %>
+
