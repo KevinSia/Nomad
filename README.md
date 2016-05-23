@@ -30,5 +30,12 @@
     - Eg: `git push origin user/sign_in`
     - *Do not* push/merge into master without **making a pull request**
 - Something to do before **pushing** to Github
+  - commit your changes
+  - `git checkout master` to switch back to master branch
+  - `git pull origin master` to pull recent changes in master
+  - switch back to your branch
+  - `git merge master` to merge new changes from master to your branch
+  - solve merge conflicts if any
   - `git status` to see files that you have made changes on
   - `git diif HEAD` to see lines of codes that you have added/deleted
+  - PUSH
