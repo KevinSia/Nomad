@@ -1,9 +1,12 @@
 #Nomad - A platform for ~~lazy~~ travelers and planners
 
-## Getting started
+## Getting started (one time)
 - Make a folder with a name of your choice
 - `cd` into the folder you've just made
 - clone source files from github -> `git clone https://github.com/KevinSia/Nomad`
+- run `rake db:create`
+- run `rake db:migrate`
+- run `rake db:seed`
 - Done! :)
 
 ## Develop!
