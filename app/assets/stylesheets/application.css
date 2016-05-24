@@ -13,3 +13,12 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+ background-color:#eee;   
+}    
+
+.rating-select{
+	margin-top: 15px;
+}
+
