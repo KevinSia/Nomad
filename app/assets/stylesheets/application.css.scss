@@ -1,0 +1,13 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "*";
+
+.activity-day {
+	padding-bottom: 15px;
+}
+
+.quest-activity {
+	strong {
+		text-decoration: underline;
+	}
+}

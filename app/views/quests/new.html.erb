@@ -1,6 +1,6 @@
 <h1>Make new quest</h1>
 
-<%= form_for [current_user, @quest] do |q| %>
+<%= form_for [current_user, @quest], html: { class: 'form-vertical center' } do |q| %>
 
 	<div><%= q.label :title %>
 		<%= q.text_field :title %></div>
@@ -33,26 +33,30 @@
 
 	<div id='activities_form'>
 		<%= link_to 'Add new day', '#', id: 'addDay' %>
-			<div class='well activity-day' id='quests-day-1'>
+		<div class='row' style='padding-bottom: 20px;'>
+			<div class='well quest-day col-md-4' id='quest-day-1'>
 				<%= q.fields_for :activities do |a| %>
-					<p>Day 1 Activities</p>
+					<p><strong>Day 1 Activities</strong></p>
+					<%= link_to 'Add new activity', '#', class: 'btn btn-primary btn-sm addActivity', 'data-day' => 1 %>
+					<div class='quest-day-1-activities', id='quest-day-1-activity-1'>
+						<p><strong>Activity 1</strong></p>
+						<div><%= a.label :description %>
+								<%= a.text_area :description %></div>
 
-					<div><%= a.label :description %>
-							<%= a.text_area :description %></div>
+						<div><%= a.label :estimated_time %>
+								<%= a.text_field :estimated_time %></div>
 
-					<div><%= a.label :estimated_time %>
-							<%= a.text_field :estimated_time %></div>
+						<div><%= a.label :location %>
+								<%= a.text_field :location %></div>
 
-					<div><%= a.label :location %>
-							<%= a.text_field :location %></div>
+						<div><%= a.label :price %>
+								<%= a.text_field :price %>
+						</div>
+						<div><%= a.label :references %>
+								<%= a.text_field :references %></div>
 
-					<div><%= a.label :price %>
-							<%= a.text_field :price %>
+						<div><%= a.hidden_field :day, value: '1'%></div>
 					</div>
-					<div><%= a.label :references %>
-							<%= a.text_field :references %></div>
-
-					<div><%= a.hidden_field :day, value: '1'%></div>
 				<% end %>
 
 			</div>

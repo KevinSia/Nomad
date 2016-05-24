@@ -1,32 +1,21 @@
 $(document).ready(function(){
 
-	var addDay = $('#addDay');
-
-	// when append, check if -1 % 3 is 0
-	// if true, wrap a row and change append location
-	// else append into $('#activities_form div.row:last')
-
-	$(addDay).on('click', function (e){
+	$('.row').on('click', '.addActivity', function(e){
 		e.preventDefault();
+		var day = $(this).data('day').toString();
+		var num_activities = $('.quest-day-' + day + '-activities').length;
 		// adds a new day div, a set of activity fields and add activity button
-		if($('.activity-day').length < 15){
-			var day = ($('.quest-day').length + 1).toString();
+		if(num_activities < 4){
+			var day = $(this).data('day').toString();
+			var day_id = '#quest-day-' + day;
+			var activity_count = (num_activities + 1).toString();
 			var date = new Date();
 			var unique = date.getTime();
 
-			//creates outer day div
 			var day_div = document.createElement("div");
-			day_div.setAttribute('class', 'well quest-day col-md-4');
-			day_div.setAttribute('id', ('quest-day-' + day));
-			day_div.innerHTML = '<p><strong>' + 'Day ' + day + ' Activities' + '</strong></p>';
-			day_div.innerHTML += "<a class='btn btn-primary btn-sm addActivity' data-day=" + day + " href='#'>Add new activity</a>";
-
-			//creates inner activity div
-			var activity_div = document.createElement("div");
-			activity_div.setAttribute('class', 'quest-day-' + day + '-activities');
-			activity_div.setAttribute('id', ('quest-day-' + day + '-activity-1'));
-
-			activity_div.innerHTML = '<p><strong>' + 'Activity 1' + '</strong></p>';
+			day_div.setAttribute('class', 'quest-day-' + day + '-activities');
+			day_div.setAttribute('id', ('quest-day-' + day.toString() + 'activity-' + activity_count));
+			day_div.innerHTML = '<p><strong>' + 'Activity ' + activity_count + '</strong></p>';
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_day'.replace('0', unique);
@@ -36,8 +25,8 @@ $(document).ready(function(){
 			input.setAttribute('value', day);
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
-			activity_div.appendChild(input_label);
-			activity_div.appendChild(input);
+			day_div.appendChild(input_label);
+			day_div.appendChild(input);
 
 			input = document.createElement("textarea");
 			input_id = 'quest_activities_attributes_0_description'.replace('0', unique);
@@ -46,9 +35,9 @@ $(document).ready(function(){
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
 			input_label.innerHTML = 'Description ';
-			activity_div.appendChild(input_label);
-			activity_div.appendChild(input);
-			$(activity_div).append('<br>');
+			day_div.appendChild(input_label);
+			day_div.appendChild(input);
+			$(day_div).append('<br>');
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_estimated_time'.replace('0', unique);
@@ -57,9 +46,9 @@ $(document).ready(function(){
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
 			input_label.innerHTML = 'Estimated Time ';
-			activity_div.appendChild(input_label);
-			activity_div.appendChild(input);
-			$(activity_div).append('<br>');
+			day_div.appendChild(input_label);
+			day_div.appendChild(input);
+			$(day_div).append('<br>');
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_location'.replace('0', unique);
@@ -68,9 +57,9 @@ $(document).ready(function(){
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
 			input_label.innerHTML = 'Location ';
-			activity_div.appendChild(input_label);
-			activity_div.appendChild(input);
-			$(activity_div).append('<br>');
+			day_div.appendChild(input_label);
+			day_div.appendChild(input);
+			$(day_div).append('<br>');
 
 
 			input = document.createElement("input");
@@ -80,9 +69,9 @@ $(document).ready(function(){
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
 			input_label.innerHTML = 'Price ';
-			activity_div.appendChild(input_label);
-			activity_div.appendChild(input);
-			$(activity_div).append('<br>');
+			day_div.appendChild(input_label);
+			day_div.appendChild(input);
+			$(day_div).append('<br>');
 
 		  input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_references'.replace('0', unique);
@@ -91,11 +80,11 @@ $(document).ready(function(){
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
 			input_label.innerHTML = 'References ';
-			activity_div.appendChild(input_label);
-			activity_div.appendChild(input);
+			day_div.appendChild(input_label);
+			day_div.appendChild(input);
 
-			day_div.appendChild(activity_div);
-			$('.row').append(day_div);
+
+			$(day_id).append(day_div);
 			// desc_id = 'quest_activities_attributes_0_description'.replace(0, unique)
 			// day_name = 'quest[activities_attributes][0][description]'.replace(0, unique)
 		}
