@@ -8,7 +8,7 @@ class QuestsController < ApplicationController
   end
 
   def create
-    @quest = Quest.new(quest_params)
+    @quest = current_user.quests.new(quest_params)
 
     if @quest.save
       redirect_to @quest
