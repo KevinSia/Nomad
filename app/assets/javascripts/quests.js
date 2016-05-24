@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	var addDay = $('#addDay');
 
 	// when append, check if -1 % 3 is 0
