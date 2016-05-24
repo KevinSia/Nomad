@@ -13,16 +13,7 @@
 </head>
 
 	<body>
-		<header>
-			<h3 style='display: inline;'><%= link_to 'Nomad', root_path %></h3>
-			<% if signed_in? %>
-			  <%= link_to current_user.first_name, dashboard_path %>
-			  <%= link_to 'Sign out', sign_out_path, method: :delete %>
-			<% else %>
-			  <%= link_to 'Sign in', sign_in_path %>
-			  <%= link_to 'Join Us', sign_up_path %>
-			<% end %>
-		</header>
+		
 		<div id="flash">
 		  <% flash.each do |key, value| %>
 		    <div class='alert alert-<%= key %>'><%= value %></div>

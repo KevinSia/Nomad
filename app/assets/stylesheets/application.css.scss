@@ -17,27 +17,26 @@
 // Requirements for bootstrap-gem
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "*";
+
 
 // Basic setup
-html {
+html,body {
   height: 100%;
-  overflow: hidden
-}
-
-body {
-  height: 100%;
-  overflow: auto;
+  width: 100%;
 }
 
 // Navbar
-.navbar-transparent {
+.navbar-fixed-top {
   background-color: transparent;
-  position: absolute;
   color: #ffffff;
-  right: 0;
-  left: 0;
-  z-index: 1001;
   padding: 10px;
+  transition: background-color .5s ease 0s;
+}
+
+.navbar-fixed-top.opaque {
+  background-color: rgb(199, 198, 182);
+  transition: background-color .5s ease 0s;
 }
 
 .navbar-brand {
@@ -45,7 +44,7 @@ body {
 }
 .navbar-brand>img {
   height: 60px;
-  padding: 0px;
+  padding-bottom: 7px;
   width: auto;
 }
 
@@ -62,17 +61,18 @@ body {
    background-size: cover;
 }
 
+.hero-main {
+ margin-top: 400px;
+ font-size: 4.0vw;
+ font-weight: 200;
+}
+
 .hero-welcome {
  display: table-cell;
  vertical-align: middle;
  text-align: center;
 }
 
-.hero-main {
- margin-top: 400px;
- font-size: 4.0vw;
- font-weight: 200;
-}
 
 // Login Modal
 #login-dp{
