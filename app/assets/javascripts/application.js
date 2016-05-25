@@ -11,9 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require nested_form_fields
 //= require_tree .
 $(function(){
     $('.rating-select .btn').on('mouseover', function(){
