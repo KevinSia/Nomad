@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   get "/history" => "static#history", as: "history"
+  get "/wishlist" => "static#wishlist", as: "wishlist"
 
   # Clearance routes
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
