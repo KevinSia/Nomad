@@ -15,7 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require turbolinks
-//= require nested_form_fields
+//= require cocoon
 //= require_tree .
 $(function(){
     $('.rating-select .btn').on('mouseover', function(){

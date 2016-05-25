@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+	$(".row").on('click', '.remove_activity', function(e){
+		e.preventDefault;
+		$(this).parents()[2].remove();
+	});
+
 	$('.row').on('click', '.addActivity', function(e){
 		e.preventDefault();
 		var day = $(this).data('day').toString();
@@ -90,8 +95,5 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.remove_activity').on('click', function(e){
-		e.preventDefault;
-		$(this).parents('div.quest-day').remove();
-	});
+
 });
