@@ -19,15 +19,16 @@
 @import "bootstrap";
 @import "*";
 
-
 // Basic setup
 html,body {
   height: 100%;
   width: 100%;
-  
 }
 
-
+body.modal-open {
+  padding-right: 0% !important;
+  overflow-y: auto;
+}
 
 // Navbar
 .navbar-fixed-top {
