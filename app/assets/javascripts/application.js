@@ -13,6 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require masonry.pkgd
+//= imagesloaded.pkgd.min
+//= classie
+//= colorfinder-1.1
+//= gridScrollFx
 //= require modernizr.custom
 //= require bootstrap-sprockets
 //= require_tree .
