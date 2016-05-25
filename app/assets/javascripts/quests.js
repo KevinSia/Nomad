@@ -17,7 +17,8 @@ $(document).ready(function(){
 			var day_div = document.createElement("div");
 			day_div.setAttribute('class', 'well quest-day col-md-4');
 			day_div.setAttribute('id', ('quest-day-' + day));
-			day_div.innerHTML = '<p><strong>' + 'Day ' + day + ' Activities' + "</strong><span><a href='#' class='remove_field' style='color: red;'>x</a></span></p>";
+			//<span><a href='#' class='remove_field' style='color: red;'>x</a></span>
+			day_div.innerHTML = '<p><strong>' + 'Day ' + day + ' Activities' + "</strong></p>";
 			day_div.innerHTML += "<a class='btn btn-primary btn-sm addActivity' data-day=" + day + " href='#'>Add new activity</a>";
 
 			//creates inner activity div
@@ -25,7 +26,7 @@ $(document).ready(function(){
 			activity_div.setAttribute('class', 'quest-day-' + day + '-activities');
 			activity_div.setAttribute('id', ('quest-day-' + day + '-activity-1'));
 
-			activity_div.innerHTML = '<p><strong>' + 'Activity 1' + '</strong></p>';
+			activity_div.innerHTML = '<p><strong>' + 'Activity 1' + "</strong><span><a href='#' class='remove_activity' style='color: red;'>x</a></span></p>";
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_day'.replace('0', unique);
@@ -104,8 +105,8 @@ $(document).ready(function(){
 		}
 	});
 
-	$('.remove_day').on('click', function(e){
-		e.preventDefault;
-		$(this).parents('div.quest-day').remove();
-	});
+	// $('.remove_day').on('click', function(e){
+	// 	e.preventDefault;
+	// 	$(this).parents('div.quest-day').remove();
+	// });
 });
