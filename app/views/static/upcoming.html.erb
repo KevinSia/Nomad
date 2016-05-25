@@ -1,0 +1,104 @@
+<p style="font-size: large; "> User dashboard </p>
+
+
+<div class="container">
+    <div class="row profile">
+    <div class="col-md-3">
+      <div class="profile-sidebar">
+        <!-- SIDEBAR USERPIC -->
+        <div class="profile-userpic">
+        <img alt="Profile pic" src="/assets/Brian.jpg" class="img-responsive" alt="" />
+
+        </div>
+        <!-- END SIDEBAR USERPIC -->
+        <!-- SIDEBAR USER TITLE -->
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            Brian Tan
+          </div>
+          <div class="profile-usertitle-job">
+            Nomad
+          </div>
+        </div>
+        <!-- END SIDEBAR USER TITLE -->
+        <!-- SIDEBAR BUTTONS -->
+        <div class="profile-userbuttons">
+          <button type="button" class="btn btn-success btn-sm">Follow</button>
+        </div>
+        <!-- END SIDEBAR BUTTONS -->
+        <!-- SIDEBAR MENU -->
+        <div class="profile-usermenu">
+          <ul class="nav">
+            <li class="active">
+            <%= link_to 'Edit profile', edit_user_path(current_user) %>
+            </li>
+            <li>
+            <%= link_to 'Log Out', sign_out_path, method: :delete %>
+            </li>
+          </ul>
+        </div>
+        <!-- END MENU -->
+      </div>
+    </div>
+    <div class="col-md-9">
+    <div class="profile-content">
+    <div class="container">
+    
+    <div class="row">
+      <div class="container">
+        <div class="row">
+        <div class="col-md-4 col-md-offset-3">
+            <form action="" class="search-form">
+                <div class="form-group has-feedback">
+                    <label for="search" class="sr-only">Search</label>
+                    <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                </div>
+            </form>
+        </div>
+        </div>
+        </div>
+
+    <h2 class="text-left">Upcoming Quests</h2>
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="box">
+                        <div class="box-content">
+                            <h1 class="tag-title">Love in The Air - Paris</h1>
+                            <hr />
+                            <img alt="" src="/assets/sample1.jpeg" width="300" height="300" align="middle" />
+                            <h3 class="country">Paris, France</h3>
+                            <h4 class="date"><span> <i class ="glyphicon glyphicon-plane"></i></i></span> April 12 to April 14 2016</h4>
+                            <h4 class="price">$300</h4>
+                            <br />
+                            <a href="ppc.html" class="btn btn-block btn-primary">Booking ID: 1234567</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="box">
+                        <div class="box-content">
+                            <h1 class="tag-title">Reignite your Love - Japan</h1>
+                            <hr />
+                            <img alt="" src="/assets/sample2.jpg" width="300" height="300" align="middle" />
+                            <h3 class="country">Tokyo, Japan</h3>
+                            <h4 class="date"><span> <i class ="glyphicon glyphicon-plane"></i></i></span> May 29 to May 31 2016</h4>
+                            <h4 class="price">$499</h4>
+                            <br />
+                            <a href="ppc.html" class="btn btn-block btn-primary">Booking ID: 9876547 </a>
+                        </div>
+                    </div>
+                </div>
+                </div> 
+                </div>
+            </div>           
+        </div>
+  </div>
+</div>
+</div>
+</div>
+<center>
+
+</center>
+<br>
+<br>
