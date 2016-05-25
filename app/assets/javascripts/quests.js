@@ -17,7 +17,7 @@ $(document).ready(function(){
 			var day_div = document.createElement("div");
 			day_div.setAttribute('class', 'well quest-day col-md-4');
 			day_div.setAttribute('id', ('quest-day-' + day));
-			day_div.innerHTML = '<p><strong>' + 'Day ' + day + ' Activities' + '</strong></p>';
+			day_div.innerHTML = '<p><strong>' + 'Day ' + day + ' Activities' + "</strong><span><a href='#' class='remove_field' style='color: red;'>x</a></span></p>";
 			day_div.innerHTML += "<a class='btn btn-primary btn-sm addActivity' data-day=" + day + " href='#'>Add new activity</a>";
 
 			//creates inner activity div
@@ -47,6 +47,7 @@ $(document).ready(function(){
 			input_label.innerHTML = 'Description ';
 			activity_div.appendChild(input_label);
 			activity_div.appendChild(input);
+			//
 			$(activity_div).append('<br>');
 
 			input = document.createElement("input");
@@ -58,6 +59,7 @@ $(document).ready(function(){
 			input_label.innerHTML = 'Estimated Time ';
 			activity_div.appendChild(input_label);
 			activity_div.appendChild(input);
+			//
 			$(activity_div).append('<br>');
 
 			input = document.createElement("input");
@@ -69,6 +71,7 @@ $(document).ready(function(){
 			input_label.innerHTML = 'Location ';
 			activity_div.appendChild(input_label);
 			activity_div.appendChild(input);
+			//
 			$(activity_div).append('<br>');
 
 
@@ -81,6 +84,7 @@ $(document).ready(function(){
 			input_label.innerHTML = 'Price ';
 			activity_div.appendChild(input_label);
 			activity_div.appendChild(input);
+			//
 			$(activity_div).append('<br>');
 
 		  input = document.createElement("input");
@@ -100,4 +104,8 @@ $(document).ready(function(){
 		}
 	});
 
+	$('.remove_day').on('click', function(e){
+		e.preventDefault;
+		$(this).parents('div.quest-day').remove();
+	});
 });

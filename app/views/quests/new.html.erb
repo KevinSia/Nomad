@@ -36,10 +36,16 @@
 		<div class='row' style='padding-bottom: 20px;'>
 			<div class='well quest-day col-md-4' id='quest-day-1'>
 				<%= q.fields_for :activities do |a| %>
-					<p><strong>Day 1 Activities</strong></p>
+					<p>
+						<strong>Day 1 Activities</strong>
+						<span><a href="#" class='remove_day' style='color: red;'>x</a></span>
+					</p>
 					<%= link_to 'Add new activity', '#', class: 'btn btn-primary btn-sm addActivity', 'data-day' => 1 %>
 					<div class='quest-day-1-activities', id='quest-day-1-activity-1'>
-						<p><strong>Activity 1</strong></p>
+						<p>
+							<strong>Activity 1</strong>
+							<span><a href="#" class='remove_activity' style='color: red;'>x</a></span>
+						</p>
 						<div><%= a.label :description %>
 								<%= a.text_area :description %></div>
 

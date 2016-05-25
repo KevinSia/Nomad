@@ -15,7 +15,7 @@ $(document).ready(function(){
 			var day_div = document.createElement("div");
 			day_div.setAttribute('class', 'quest-day-' + day + '-activities');
 			day_div.setAttribute('id', ('quest-day-' + day.toString() + 'activity-' + activity_count));
-			day_div.innerHTML = '<p><strong>' + 'Activity ' + activity_count + '</strong></p>';
+			day_div.innerHTML = '<p><strong>' + 'Activity ' + activity_count + "</strong><span><a href='#' class='remove_activity' style='color: red;'>x</a></span></p>";
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_day'.replace('0', unique);
@@ -90,4 +90,8 @@ $(document).ready(function(){
 		}
 	});
 
+	$('.remove_activity').on('click', function(e){
+		e.preventDefault;
+		$(this).parents('div.quest-day').remove();
+	});
 });

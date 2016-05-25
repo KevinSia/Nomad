@@ -111,6 +111,10 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    nested_form_fields (0.7.8)
+      coffee-rails (>= 3.2.1)
+      jquery-rails
+      rails (>= 3.2.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     oauth2 (1.1.0)
@@ -205,6 +209,7 @@ DEPENDENCIES
   jquery-turbolinks
   letter_opener
   mini_magick
+  nested_form_fields
   omniauth
   omniauth-facebook
   pg (~> 0.15)
