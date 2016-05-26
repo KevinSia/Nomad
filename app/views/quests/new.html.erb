@@ -2,37 +2,46 @@
 
 <%= form_for [current_user, @quest], html: { class: 'form-vertical center' } do |q| %>
 
-	<div><%= q.label :title %>
-		<%= q.text_field :title %></div>
-
-	<!-- dropdown/number input -->
-	<div><%= q.label :duration %>
-		<%= q.text_field :duration %></div>
-
-	<!-- countrystateselect gem or google api? -->
-	<div><%= q.label :country %>
-		<%= q.text_field :country %></div>
-
-	<!-- countrystateselect gem or google api? -->
-	<div><%= q.label :city %>
-		<%= q.text_field :city %></div>
-
-	<!-- javascript needed to fix upper range -->
-	<div><%= q.label :lower_price %>
-		<%= q.text_field :lower_price %>
+	<div>
+		<%= q.label :title %>
+		<%= q.text_field :title %>
 	</div>
 
-	<div><%= q.label :upper_price %>
-		<%= q.text_field :upper_price %></div>
+	<!-- dropdown/number input -->
+	<div>
+		<%= q.label :duration %>
+		<%= q.text_field :duration %>
+	</div>
 
-	<div><%= q.label :category %>
-		<%= q.text_field :category %></div>
+	<!-- countrystateselect gem or google api? -->
+	<div>
+		<%= q.label :country %>
+		<%= q.text_field :country %>
+	</div>
 
-	<div><%= q.label :description %>
-		<%= q.text_area :description %></div>
+	<!-- countrystateselect gem or google api? -->
+	<div>
+		<%= q.label :city %>
+		<%= q.text_field :city %>
+	</div>
 
+	<!-- javascript needed to fix upper range -->
+	<div>
+		<%= q.label :category %>
+		<%= q.select :category, Quest::CATEGORIES %>
+	</div>
+
+	<div>
+		<%= q.label :description %>
+		<%= q.text_area :description %>
+	</div>
+
+	<div>
+		<%= q.label :photos %>
+		<%= q.file_field :photos, multiple: true %>
+	</div>
 	<div id='activities_form'>
-		<%= link_to 'Add new day', '#', id: 'addDay' %>
+		<%= link_to 'Add new day', '#', id: 'addDay', class: 'btn btn-primaryq' %>
 		<div class='row' style='padding-bottom: 20px;'>
 			<div class='well quest-day col-md-4' id='quest-day-1'>
 				<%= q.fields_for :activities do |a| %>
@@ -45,22 +54,37 @@
 							<strong>Activity 1</strong>
 							<span><a href="#" class='remove_activity' style='color: red;'>x</a></span>
 						</p>
-						<div><%= a.label :description %>
-								<%= a.text_area :description %></div>
 
-						<div><%= a.label :estimated_time %>
-								<%= a.text_field :estimated_time %></div>
-
-						<div><%= a.label :location %>
-								<%= a.text_field :location %></div>
-
-						<div><%= a.label :price %>
-								<%= a.text_field :price %>
+						<div>
+							<%= a.label :title %>
+							<%= a.text_field :title %>
 						</div>
-						<div><%= a.label :references %>
-								<%= a.text_field :references %></div>
+						<div>
+							<%= a.label :description %>
+							<%= a.text_area :description %>
+						</div>
 
-						<div><%= a.hidden_field :day, value: '1'%></div>
+						<div>
+							<%= a.label :estimated_time, 'Estimated time (hours)' %>
+							<%= a.number_field :estimated_time, min: 0 %>
+						</div>
+
+						<div>
+							<%= a.label :location %>
+							<%= a.text_field :location %>
+						</div>
+
+						<div>
+							<%= a.label :price, 'Price (RM)' %>
+							<%= a.number_field :price, min: 1 %>
+						</div>
+
+						<div>
+							<%= a.label :references %>
+							<%= a.text_field :references %>
+						</div>
+
+						<%= a.hidden_field :day, value: '1'%>
 					</div>
 				<% end %>
 

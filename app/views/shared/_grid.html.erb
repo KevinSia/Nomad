@@ -1,8 +1,16 @@
 <section class="grid-wrap js">
   <ul class="grid swipe-down" id="grid">
     <li class="title-box text-right">
-      <h2>Checkout these latest quest</a></h2>
+      <h2>Checkout these latest quests</a></h2>
     </li>
+    <% @quests.each do |quest| %>
+        <li>
+            <%= link_to quest_path(quest) do %>
+                <%= image_tag(quest.photos? ? quest.photos.first : 'dummy.png') %>
+                <h3><%= quest.title %></h3>
+            <% end %>
+        </li>
+    <% end %>
     <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
     <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
     <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
@@ -52,3 +60,7 @@
     viewportFactor : 0.4
   } );
 </script>
+<<<<<<< HEAD
+\
+=======
+>>>>>>> master
