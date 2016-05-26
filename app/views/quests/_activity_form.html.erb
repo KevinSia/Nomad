@@ -1,49 +1,53 @@
 <div>
-	<%= link_to 'Add new activity', '#', class: 'btn btn-primary', id:'addActivity'%>
+	<%= link_to 'Add new activity!', '#', class: 'btn btn-primary', id:'addActivity'%>
 </div>
 
 <div id='activities_form'>
 	<div class='row' style='padding-bottom: 20px;' id='quest-activities'>
 		<%= q.fields_for :activities do |a| %>
-			<div class='col-md-3 quest-activity' id='quest-activity-1'>
-				<p>
-					<strong>Activity 1</strong>
-					<span><a href="#" class='remove_activity' style='color: red;'>x</a></span>
-				</p>
+			<div class='col-md-4 quest-activity' id='quest-activity-1'>
+				<div class="mdl-card__title">
+					<p>
+						<strong>Activity 1</strong>
+					</p>
+				</div>
+				<div class="mdl-card__supporting-text">
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<%= a.label :title, class: "mdl-textfield__label" %>
+						<%= a.text_field :title, class: "mdl-textfield__input"%>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<%= a.label :location, class: "mdl-textfield__label" %>
+						<%= a.text_field :location, class: "mdl-textfield__input"%>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<%= a.label :references, class: "mdl-textfield__label" %>
+						<%= a.text_field :references, class: "mdl-textfield__input"%>
+					</div>
 
-				<div>
-					<%= a.label :title %>
-					<%= a.text_field :title %>
-				</div>
-				<div>
-					<%= a.label :description %>
-					<%= a.text_area :description %>
-				</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<%= a.label :estimated_time, class: "mdl-textfield__label" %>
+						<%= a.number_field :estimated_time, min: 0 , class: "mdl-textfield__input"%>
+					</div>
 
-				<div>
-					<%= a.label :estimated_time, 'Estimated time (hours)' %>
-					<%= a.number_field :estimated_time, min: 0 %>
-				</div>
+					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+						<%= a.label :price, 'Estimated Price', class: "mdl-textfield__label" %>
+						<%= a.number_field :price, min: 0 , class: "mdl-textfield__input"%>
+					</div>
 
-				<div>
-					<%= a.label :location %>
-					<%= a.text_field :location %>
-				</div>
+					<div class="mdl-textfield mdl-js-textfield">
+						<%= a.label :description, class: 'mdl-textfield__label' %>
+						<%= a.text_area :description, class: 'mdl-textfield__input', rows: '3' %>
+					</div>
 
-				<div>
-					<%= a.label :price, 'Price (RM)' %>
-					<%= a.number_field :price, min: 1 %>
+					<div>
+						<%= a.label :photos %>
+						<%= a.file_field :photos %>
+					</div>
 				</div>
-
-				<div>
-					<%= a.label :references %>
-					<%= a.text_field :references %>
-				</div>
-
-				<div>
-					<%= a.label :photos %>
-					<%= a.file_field :photos %>
-				</div>
+				<div class="mdl-card__actions">
+					<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect remove_activity" data-activity= '1'>Remove Activity</a>
+  			</div>
 			</div>
 		<% end %>
 	</div>

@@ -14,6 +14,8 @@ div[class$="-activities"] {
     margin: 60px auto;
     /*height: 500px;*/
     background: #fff;
+    overflow: auto;
+    overflow-x: hidden;
     /*box-shadow: 10px 10px #ccc,-10px 20px #ddd;*/
 }
 .board .nav-tabs {

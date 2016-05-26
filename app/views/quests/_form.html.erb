@@ -5,8 +5,8 @@
 
 <!-- dropdown/number input -->
 <div>
-	<%= q.label :duration %>
-	<%= q.text_field :duration %>
+	<%= q.label :duration, 'Duration (in days)' %>
+	<%= q.number_field :duration,  min: 1 %>
 </div>
 
 <!-- countrystateselect gem or google api? -->
@@ -32,7 +32,6 @@
 	<%= q.text_area :description %>
 </div>
 
-<div>
+
 	<%= q.label :photos %>
 	<%= q.file_field :photos, multiple: true %>
-</div>

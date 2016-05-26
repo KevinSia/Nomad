@@ -32,37 +32,35 @@
             <div class="tab-pane fade in active" id="main">
                 <h3 class="head text-center">Quest details</h3>
                 <div class="form-horizontal text-center" id="main_form" name="main_form" role="form">
-                    <div>
                       <%= render partial: 'quests/form', locals: { q: q } %>
                       <fieldset>
                           <button type="submit" href="#activities" name="main_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
                           </button>
                       </fieldset>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="activities">
-                    <h3 class="head text-center">Create a Bootsnipp<sup>™</sup> Profile</h3>
-                    <p class="narrow text-center"> Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim. </p>
-                    <div class="form-horizontal text-center" id="activities_form" name="activities_form" role="form">
-                        <%= render partial: 'quests/activity_form', locals: { q: q } %>
-                        <fieldset>
-                            <button type="submit" href="#result" name="result_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
-                            </button>
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="result">
-                    <h3 class="head text-center">Bootsnipp goodies</h3>
-                    <p class="narrow text-center"> Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim. </p>
-                    <div class="form-horizontal text-center" id="result_form" name="result_form" role="form">
-                      <fieldset>
-                          <button type="submit" href="#main" name="result_form" class="btn-submit btn btn-success btn-outline-rounded green"> Back to beginning <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
-                          </button>
-                          <%=q .submit %>
-                      </fieldset>
-                    </div>
                 </div>
             </div>
+            <div class="tab-pane fade" id="activities">
+                <h3 class="head text-center">Adding Activities</h3>
+                <div class="form-horizontal text-center" id="activities_form" name="activities_form" role="form">
+                    <%= render partial: 'quests/activity_form', locals: { q: q } %>
+                    <fieldset>
+                        <button type="submit" href="#result" name="result_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </button>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="result">
+                <h3 class="head text-center">Bootsnipp goodies</h3>
+                <p class="narrow text-center"> Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim. </p>
+                <div class="form-horizontal text-center" id="result_form" name="result_form" role="form">
+                  <fieldset>
+                      <button type="submit" href="#main" name="result_form" class="btn-submit btn btn-success btn-outline-rounded green"> Back to beginning <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                      </button>
+                      <%=q .submit %>
+                  </fieldset>
+                </div>
+            </div>
+          </div>
         </div> <!-- board -->
       <% end %>
     </div> <!-- row -->
