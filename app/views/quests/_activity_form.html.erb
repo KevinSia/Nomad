@@ -1,0 +1,50 @@
+<div>
+	<%= link_to 'Add new activity', '#', class: 'btn btn-primary', id:'addActivity'%>
+</div>
+
+<div id='activities_form'>
+	<div class='row' style='padding-bottom: 20px;' id='quest-activities'>
+		<%= q.fields_for :activities do |a| %>
+			<div class='col-md-3 quest-activity' id='quest-activity-1'>
+				<p>
+					<strong>Activity 1</strong>
+					<span><a href="#" class='remove_activity' style='color: red;'>x</a></span>
+				</p>
+
+				<div>
+					<%= a.label :title %>
+					<%= a.text_field :title %>
+				</div>
+				<div>
+					<%= a.label :description %>
+					<%= a.text_area :description %>
+				</div>
+
+				<div>
+					<%= a.label :estimated_time, 'Estimated time (hours)' %>
+					<%= a.number_field :estimated_time, min: 0 %>
+				</div>
+
+				<div>
+					<%= a.label :location %>
+					<%= a.text_field :location %>
+				</div>
+
+				<div>
+					<%= a.label :price, 'Price (RM)' %>
+					<%= a.number_field :price, min: 1 %>
+				</div>
+
+				<div>
+					<%= a.label :references %>
+					<%= a.text_field :references %>
+				</div>
+
+				<div>
+					<%= a.label :photos %>
+					<%= a.file_field :photos %>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

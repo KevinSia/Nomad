@@ -1,0 +1,38 @@
+<div>
+	<%= q.label :title %>
+	<%= q.text_field :title %>
+</div>
+
+<!-- dropdown/number input -->
+<div>
+	<%= q.label :duration %>
+	<%= q.text_field :duration %>
+</div>
+
+<!-- countrystateselect gem or google api? -->
+<div>
+	<%= q.label :country %>
+	<%= q.text_field :country %>
+</div>
+
+<!-- countrystateselect gem or google api? -->
+<div>
+	<%= q.label :city %>
+	<%= q.text_field :city %>
+</div>
+
+<!-- javascript needed to fix upper range -->
+<div>
+	<%= q.label :category %>
+	<%= q.select :category, Quest::CATEGORIES %>
+</div>
+
+<div>
+	<%= q.label :description %>
+	<%= q.text_area :description %>
+</div>
+
+<div>
+	<%= q.label :photos %>
+	<%= q.file_field :photos, multiple: true %>
+</div>
