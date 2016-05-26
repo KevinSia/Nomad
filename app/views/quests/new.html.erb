@@ -2,28 +2,44 @@
 
 <%= form_for [current_user, @quest], html: { class: 'form-vertical center' } do |q| %>
 
-	<div><%= q.label :title %>
-		<%= q.text_field :title %></div>
+	<div>
+		<%= q.label :title %>
+		<%= q.text_field :title %>
+	</div>
 
 	<!-- dropdown/number input -->
-	<div><%= q.label :duration %>
-		<%= q.text_field :duration %></div>
+	<div>
+		<%= q.label :duration %>
+		<%= q.text_field :duration %>
+	</div>
 
 	<!-- countrystateselect gem or google api? -->
-	<div><%= q.label :country %>
-		<%= q.text_field :country %></div>
+	<div>
+		<%= q.label :country %>
+		<%= q.text_field :country %>
+	</div>
 
 	<!-- countrystateselect gem or google api? -->
-	<div><%= q.label :city %>
-		<%= q.text_field :city %></div>
+	<div>
+		<%= q.label :city %>
+		<%= q.text_field :city %>
+	</div>
 
 	<!-- javascript needed to fix upper range -->
-	<div><%= q.label :category %>
-		<%= q.select :category, Quest::CATEGORIES %></div>
+	<div>
+		<%= q.label :category %>
+		<%= q.select :category, Quest::CATEGORIES %>
+	</div>
 
-	<div><%= q.label :description %>
-		<%= q.text_area :description %></div>
+	<div>
+		<%= q.label :description %>
+		<%= q.text_area :description %>
+	</div>
 
+	<div>
+		<%= q.label :photos %>
+		<%= q.file_field :photos, multiple: true %>
+	</div>
 	<div id='activities_form'>
 		<%= link_to 'Add new day', '#', id: 'addDay', class: 'btn btn-primaryq' %>
 		<div class='row' style='padding-bottom: 20px;'>
@@ -39,6 +55,10 @@
 							<span><a href="#" class='remove_activity' style='color: red;'>x</a></span>
 						</p>
 
+						<div>
+							<%= a.label :title %>
+							<%= a.text_field :title %>
+						</div>
 						<div>
 							<%= a.label :description %>
 							<%= a.text_area :description %>

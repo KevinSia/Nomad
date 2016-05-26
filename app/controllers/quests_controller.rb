@@ -37,7 +37,7 @@ class QuestsController < ApplicationController
   end
 
   def quest_params
-    params.require(:quest).permit(:title, :duration, :country, :city,
+    params.require(:quest).permit(:title, :duration, :country, :city, { photos: [] },
                                   :category, :description,
                                   activities_attributes: [:day, :description, :estimated_time, :location, :price, :references])
   end
