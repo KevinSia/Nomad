@@ -1,20 +1,29 @@
 
 <div class="container">
 <div class="form-style-3">
-<form class="pure-form pure-form-aligned">
 <fieldset><legend>Plan a New Quest!</legend>
     <div class="row">
         <%= form_for [current_user, @quest], html: { class: 'form-vertical center' } do |q| %>
 
-          <div class="pure-control-group"><%= q.label :title %>
+          <div><%= q.label :title %>
             <%= q.text_field :title %></div>
 
           <!-- dropdown/number input -->
-          <div class="pure-control-group"><%= q.label :duration %>
-            <%= q.text_field :duration %></div>
+            <div><%= q.label :duration %>
+            <select class="form-control" id="durationselect">
+            <!-- replace %=q.text_field :duration%-->
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+            </select></div>
 
           <!-- countrystateselect gem or google api? -->
-          <div class="pure-control-group"><%= q.label :country %>
+          <div><%= q.label :country %>
             <%= q.text_field :country %></div>
 
           <!-- countrystateselect gem or google api? -->
@@ -31,6 +40,15 @@
 
           <div><%= q.label :category %>
             <%= q.text_field :category %></div>
+
+          <div><%= q.label :category %>
+            <select class="form-control" id="durationselect">
+            <!-- replace %=q.text_field :category%-->
+                <option>Backpack</option>
+                <option>Couple</option>
+                <option>Family</option>
+                <option>Friends</option>
+            </select></div>
 
           <div><%= q.label :description %>
             <%= q.text_area :description %></div>
@@ -208,6 +226,5 @@
 <% end %>
 </div>
 </fieldset>
-</form>
 </div>
 </div>
