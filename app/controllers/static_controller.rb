@@ -12,4 +12,8 @@ class StaticController < ApplicationController
 
   def dashboard
   end
+
+  def wallet
+    @user = User.find(params[:user_id])
+  end
 end

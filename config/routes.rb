@@ -22,7 +22,9 @@ Rails.application.routes.draw do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
+
     resources :quests, only: [:new, :create, :edit, :update]
+
   end
 
 
@@ -56,7 +58,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
+  get "/users/:user_id/wallet" => "static#wallet", as: "wallet"
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
