@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 	var addDay = $('#addDay');
 
@@ -28,16 +29,16 @@ $(document).ready(function(){
 
 			activity_div.innerHTML = '<p><strong>' + 'Activity 1' + "</strong><span><a href='#' class='remove_activity' style='color: red;'>x</a></span></p>";
 
-			input = document.createElement("input");
-			input_id = 'quest_activities_attributes_0_day'.replace('0', unique);
-			input.setAttribute('id', input_id);
-			input.setAttribute('name', 'quest[activities_attributes][0][day]'.replace('0', unique));
-			input.setAttribute('type', 'hidden');
-			input.setAttribute('value', day);
-			input_label = document.createElement('label');
-			input_label.setAttribute('for', input_id);
-			activity_div.appendChild(input_label);
-			activity_div.appendChild(input);
+			// input = document.createElement("input");
+			// input_id = 'quest_activities_attributes_0_day'.replace('0', unique);
+			// input.setAttribute('id', input_id);
+			// input.setAttribute('name', 'quest[activities_attributes][0][day]'.replace('0', unique));
+			// input.setAttribute('type', 'hidden');
+			// input.setAttribute('value', day);
+			// input_label = document.createElement('label');
+			// input_label.setAttribute('for', input_id);
+			// activity_div.appendChild(input_label);
+			// activity_div.appendChild(input);
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_title'.replace('0', unique);
