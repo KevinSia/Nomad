@@ -39,6 +39,17 @@ $(document).ready(function(){
 			activity_div.appendChild(input_label);
 			activity_div.appendChild(input);
 
+			input = document.createElement("input");
+			input_id = 'quest_activities_attributes_0_title'.replace('0', unique);
+			input.setAttribute('id', input_id);
+			input.setAttribute('name', ('quest[activities_attributes][0][title]'.replace('0', unique)));
+			input_label = document.createElement('label');
+			input_label.setAttribute('for', input_id);
+			input_label.innerHTML = 'Title ';
+			activity_div.appendChild(input_label);
+			activity_div.appendChild(input);
+			$(activity_div).append('<br>');
+
 			input = document.createElement("textarea");
 			input_id = 'quest_activities_attributes_0_description'.replace('0', unique);
 			input.setAttribute('id', ('quest_activities_attributes_0_description'.replace('0', unique)));

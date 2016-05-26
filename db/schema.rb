@@ -1,4 +1,4 @@
-# encoding: UTF-8
+-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,8 +12,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 20160525092503) do
 
+ActiveRecord::Schema.define(version: 20160526031227) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 20160525092503) do
   create_table "activities", force: :cascade do |t|
     t.string   "day"
     t.text     "description"
-    t.string   "estimated_time"
     t.string   "location"
-    t.string   "price"
     t.string   "references"
     t.integer  "quest_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "price"
+    t.integer  "estimated_time"
     t.string   "title"
   end
 
@@ -57,13 +57,12 @@ ActiveRecord::Schema.define(version: 20160525092503) do
     t.integer  "duration"
     t.string   "country"
     t.string   "city"
-    t.string   "lower_price"
-    t.string   "upper_price"
     t.string   "category"
     t.integer  "user_id"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.json     "photos"
   end
 
   add_index "quests", ["user_id"], name: "index_quests_on_user_id", using: :btree

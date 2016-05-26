@@ -57,7 +57,7 @@
 
           <div class="col-md-4">
             <h2>Post a Quest</h2>
-              <%= link_to '#' do %>
+            <%= link_to new_user_quest_path(current_user) do%>
               <%=image_tag("post.png", size:"100x100")%>
             <% end %>
           </div>

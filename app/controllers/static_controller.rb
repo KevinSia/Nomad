@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
   # landing page
   def home
+    @quests = Quest.all
     if signed_in?
       @status = 'user'
     else

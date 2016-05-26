@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	$(".row").on('click', '.remove_activity', function(e){
 		e.preventDefault;
+		confirm("Are you sure?");
 		$(this).parents()[2].remove();
 	});
 
@@ -33,9 +34,20 @@ $(document).ready(function(){
 			day_div.appendChild(input_label);
 			day_div.appendChild(input);
 
+			input = document.createElement("input");
+			input_id = 'quest_activities_attributes_0_title'.replace('0', unique);
+			input.setAttribute('id', input_id);
+			input.setAttribute('name', ('quest[activities_attributes][0][title]'.replace('0', unique)));
+			input_label = document.createElement('label');
+			input_label.setAttribute('for', input_id);
+			input_label.innerHTML = 'Title ';
+			day_div.appendChild(input_label);
+			day_div.appendChild(input);
+			$(day_div).append('<br>');
+
 			input = document.createElement("textarea");
 			input_id = 'quest_activities_attributes_0_description'.replace('0', unique);
-			input.setAttribute('id', ('quest_activities_attributes_0_description'.replace('0', unique)));
+			input.setAttribute('id', input_id);
 			input.setAttribute('name', ('quest[activities_attributes][0][description]'.replace('0', unique)));
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
@@ -46,7 +58,7 @@ $(document).ready(function(){
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_estimated_time'.replace('0', unique);
-			input.setAttribute('id', ('quest_activities_attributes_0_estimated_time'.replace('0', unique)));
+			input.setAttribute('id', input_id);
 			input.setAttribute('name', ('quest[activities_attributes][0][estimated_time]'.replace('0', unique)));
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
@@ -57,7 +69,7 @@ $(document).ready(function(){
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_location'.replace('0', unique);
-			input.setAttribute('id', ('quest_activities_attributes_0_location'.replace('0', unique)));
+			input.setAttribute('id', input_id);
 			input.setAttribute('name', ('quest[activities_attributes][0][location]'.replace('0', unique)));
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
@@ -69,7 +81,7 @@ $(document).ready(function(){
 
 			input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_price'.replace('0', unique);
-			input.setAttribute('id', ('quest_activities_attributes_0_price'.replace('0', unique)));
+			input.setAttribute('id', input_id);
 			input.setAttribute('name', ('quest[activities_attributes][0][price]'.replace('0', unique)));
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
@@ -80,7 +92,7 @@ $(document).ready(function(){
 
 		  input = document.createElement("input");
 			input_id = 'quest_activities_attributes_0_references'.replace('0', unique);
-			input.setAttribute('id', ('quest_activities_attributes_0_references'.replace('0', unique)));
+			input.setAttribute('id', input_id);
 			input.setAttribute('name', ('quest[activities_attributes][0][references]'.replace('0', unique)));
 			input_label = document.createElement('label');
 			input_label.setAttribute('for', input_id);
