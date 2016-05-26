@@ -1,4 +1,4 @@
--# encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -11,14 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20160526031227) do
+ActiveRecord::Schema.define(version: 20160526085207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.string   "day"
     t.text     "description"
     t.string   "location"
     t.string   "references"
@@ -28,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160526031227) do
     t.integer  "price"
     t.integer  "estimated_time"
     t.string   "title"
+    t.json     "photos"
   end
 
   add_index "activities", ["quest_id"], name: "index_activities_on_quest_id", using: :btree

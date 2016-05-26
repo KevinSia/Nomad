@@ -1,95 +1,67 @@
 <h1>Make new quest</h1>
-
-<%= form_for [current_user, @quest], html: { class: 'form-vertical center' } do |q| %>
-
-	<div>
-		<%= q.label :title %>
-		<%= q.text_field :title %>
-	</div>
-
-	<!-- dropdown/number input -->
-	<div>
-		<%= q.label :duration %>
-		<%= q.text_field :duration %>
-	</div>
-
-	<!-- countrystateselect gem or google api? -->
-	<div>
-		<%= q.label :country %>
-		<%= q.text_field :country %>
-	</div>
-
-	<!-- countrystateselect gem or google api? -->
-	<div>
-		<%= q.label :city %>
-		<%= q.text_field :city %>
-	</div>
-
-	<!-- javascript needed to fix upper range -->
-	<div>
-		<%= q.label :category %>
-		<%= q.select :category, Quest::CATEGORIES %>
-	</div>
-
-	<div>
-		<%= q.label :description %>
-		<%= q.text_area :description %>
-	</div>
-
-	<div>
-		<%= q.label :photos %>
-		<%= q.file_field :photos, multiple: true %>
-	</div>
-	<div id='activities_form'>
-		<%= link_to 'Add new day', '#', id: 'addDay', class: 'btn btn-primaryq' %>
-		<div class='row' style='padding-bottom: 20px;'>
-			<div class='well quest-day col-md-4' id='quest-day-1'>
-				<%= q.fields_for :activities do |a| %>
-					<p>
-						<strong>Day 1 Activities</strong>
-					</p>
-					<%= link_to 'Add new activity', '#', class: 'btn btn-primary btn-sm addActivity', 'data-day' => 1 %>
-					<div class='quest-day-1-activities' id='quest-day-1-activity-1'>
-						<p>
-							<strong>Activity 1</strong>
-							<span><a href="#" class='remove_activity' style='color: red;'>x</a></span>
-						</p>
-
-						<div>
-							<%= a.label :title %>
-							<%= a.text_field :title %>
-						</div>
-						<div>
-							<%= a.label :description %>
-							<%= a.text_area :description %>
-						</div>
-
-						<div>
-							<%= a.label :estimated_time, 'Estimated time (hours)' %>
-							<%= a.number_field :estimated_time, min: 0 %>
-						</div>
-
-						<div>
-							<%= a.label :location %>
-							<%= a.text_field :location %>
-						</div>
-
-						<div>
-							<%= a.label :price, 'Price (RM)' %>
-							<%= a.number_field :price, min: 1 %>
-						</div>
-
-						<div>
-							<%= a.label :references %>
-							<%= a.text_field :references %>
-						</div>
-
-						<%= a.hidden_field :day, value: '1'%>
-					</div>
-				<% end %>
-
-			</div>
-		</div>
-	</div>
-	<%= q.submit %>
-<% end %>
+<section style="background:#efefe9;">
+    <!-- <div class='container'> -->
+  <div class='row'>
+    <%= form_for [current_user, @quest] do |q| %>
+    <div class="board">
+        <div class='board-inner'>
+            <ul class="nav nav-tabs" id="myTab">
+                <div class="liner"></div>
+                <li class="active">
+                    <!-- home -->
+                    <a href="#main" data-toggle="tab" title="welcome"> <span class="round-tabs one">
+      		<i class="glyphicon glyphicon-home"></i>
+      	</span> </a>
+                </li>
+                <!-- profile -->
+                <li class="disabled">
+                    <a href="#activities" data-toggle="tab" title="profile"> <span class="round-tabs two">
+      	  <i class="glyphicon glyphicon-user"></i>
+        </span> </a>
+                </li>
+                <!-- messages -->
+                <li class="disabled">
+                    <a href="#result" data-toggle="tab" title="bootsnipp goodies"> <span class="round-tabs three">
+       	 <i class="glyphicon glyphicon-gift"></i>
+        </span> </a>
+                </li>
+            </ul>
+        </div>
+        <!-- </div> -->
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="main">
+              	<h3 class="head text-center">Quest details</h3>
+              <div class="form-horizontal text-center" id="main_form" name="main_form" role="form">
+                    <%= render partial: 'quests/form', locals: { q: q } %>
+                    <fieldset>
+                        <button type="submit" href="#activities" name="main_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </button>
+                    </fieldset>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="activities">
+                <h3 class="head text-center">Adding Activities</h3>
+                <div class="form-horizontal text-center" id="activities_form" name="activities_form" role="form">
+                    <%= render partial: 'quests/activity_form', locals: { q: q } %>
+                    <fieldset>
+                        <button type="submit" href="#result" name="result_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </button>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="result">
+                <h3 class="head text-center">You're all set!</h3>
+                <p class="narrow text-center">Share your amazing quest to the nomads, for them to experience what you have experienced</p>
+                <div class="form-horizontal text-center" id="result_form" name="result_form" role="form">
+                  <fieldset>
+                      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id='quest_submit'>
+                      	Publish now<i class="material-icons">add</i></button>
+                  </fieldset>
+                </div>
+            </div>
+          </div>
+        </div> <!-- board -->
+      <% end %>
+    </div> <!-- row -->
+  </div>
+</section>
