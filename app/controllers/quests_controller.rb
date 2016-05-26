@@ -37,7 +37,7 @@ class QuestsController < ApplicationController
   end
 
   def quest_params
-    params.require(:quest).permit(:title, :duration, :country, :city, :lower_price, :upper_price,
+    params.require(:quest).permit(:title, :duration, :country, :city,
                                   :category, :description,
                                   activities_attributes: [:day, :description, :estimated_time, :location, :price, :references])
   end

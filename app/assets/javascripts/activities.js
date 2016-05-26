@@ -2,6 +2,7 @@ $(document).ready(function(){
 
 	$(".row").on('click', '.remove_activity', function(e){
 		e.preventDefault;
+		alert("Are you sure?");
 		$(this).parents()[2].remove();
 	});
 

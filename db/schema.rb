@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523151154) do
+ActiveRecord::Schema.define(version: 20160526023318) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,13 @@ ActiveRecord::Schema.define(version: 20160523151154) do
   create_table "activities", force: :cascade do |t|
     t.string   "day"
     t.text     "description"
-    t.string   "estimated_time"
     t.string   "location"
-    t.string   "price"
     t.string   "references"
     t.integer  "quest_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.integer  "price"
+    t.integer  "estimated_time"
   end
 
   add_index "activities", ["quest_id"], name: "index_activities_on_quest_id", using: :btree
@@ -46,8 +46,6 @@ ActiveRecord::Schema.define(version: 20160523151154) do
     t.integer  "duration"
     t.string   "country"
     t.string   "city"
-    t.string   "lower_price"
-    t.string   "upper_price"
     t.string   "category"
     t.integer  "user_id"
     t.text     "description"
