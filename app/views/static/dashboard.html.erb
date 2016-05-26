@@ -12,7 +12,7 @@
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            <%=@user.first_name%> <%=@user.last_name%>
+            <%= current_user.fullname %>
           </div>
           <div class="profile-usertitle-job">
             Nomad

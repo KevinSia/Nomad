@@ -21,6 +21,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def fullname
+    "#{first_name}" + last_name ? " #{last_name}" : ""
+  end
+
   def fb_token
     x = authentications.where(provider: :facebook).first
     return x.token unless x.nil?
