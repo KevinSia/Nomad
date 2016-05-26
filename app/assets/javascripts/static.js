@@ -106,11 +106,11 @@ $(function() {
 });
 
 $( document ).ready(function() {
-      
+
   $('#hearts').on('starrr:change', function(e, value){
     $('#count').html(value);
   });
-  
+
   $('#hearts-existing').on('starrr:change', function(e, value){
     $('#count-existing').html(value);
   });
