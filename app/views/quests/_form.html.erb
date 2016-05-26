@@ -1,37 +1,46 @@
-<div>
-	<%= q.label :title %>
-	<%= q.text_field :title %>
+<div class='row quest_details'>
+	<div class='col-md-10 col-md-offset-1'>
+		<div class="mdl-card__supporting-text">
+			<div class="mdl-textfield mdl-js-textfield">
+				<label class="mdl-textfield__label"></label>
+				<%= q.text_field :title, class: "mdl-textfield__input", placeholder: 'Title' %>
+			</div>
+			<br>
+
+			<div class="mdl-textfield mdl-js-textfield">
+				<label class="mdl-textfield__label"></label>
+				<%= q.number_field :duration,  min: 1, class: "mdl-textfield__input", placeholder: 'Duration (in days)' %>
+			</div>
+			<br>
+
+			<div class="mdl-textfield mdl-js-textfield">
+				<label class="mdl-textfield__label"></label>
+				<%= q.text_field :country, class: "mdl-textfield__input", placeholder: 'Country' %>
+			</div>
+			<br>
+
+			<div class="mdl-textfield mdl-js-textfield">
+				<label class="mdl-textfield__label"></label>
+				<%= q.text_field :city, class: "mdl-textfield__input", placeholder: 'City' %>
+			</div>
+			<br>
+
+			<div class="mdl-textfield mdl-js-textfield quest-categories">
+				<%= q.label :category %>
+				<%= q.select :category, Quest::CATEGORIES %>
+			</div>
+			<br>
+
+			<div class="mdl-textfield mdl-js-textfield">
+				<label class="mdl-textfield__label"></label>
+				<%= q.text_area :description, class: "mdl-textfield__input", rows: '5', placeholder: 'Description' %>
+			</div>
+			<br>
+
+			<div class="mdl-textfield mdl-js-textfield upload_quest_photo">
+				<%= q.label :'photos:' %>
+				<%= q.file_field :photos, multiple: true %>
+			</div>
+		</div>
+	</div>
 </div>
-
-<!-- dropdown/number input -->
-<div>
-	<%= q.label :duration, 'Duration (in days)' %>
-	<%= q.number_field :duration,  min: 1 %>
-</div>
-
-<!-- countrystateselect gem or google api? -->
-<div>
-	<%= q.label :country %>
-	<%= q.text_field :country %>
-</div>
-
-<!-- countrystateselect gem or google api? -->
-<div>
-	<%= q.label :city %>
-	<%= q.text_field :city %>
-</div>
-
-<!-- javascript needed to fix upper range -->
-<div>
-	<%= q.label :category %>
-	<%= q.select :category, Quest::CATEGORIES %>
-</div>
-
-<div>
-	<%= q.label :description %>
-	<%= q.text_area :description %>
-</div>
-
-
-	<%= q.label :photos %>
-	<%= q.file_field :photos, multiple: true %>

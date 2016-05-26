@@ -30,14 +30,14 @@
         <!-- </div> -->
         <div class="tab-content">
             <div class="tab-pane fade in active" id="main">
-                <h3 class="head text-center">Quest details</h3>
-                <div class="form-horizontal text-center" id="main_form" name="main_form" role="form">
-                      <%= render partial: 'quests/form', locals: { q: q } %>
-                      <fieldset>
-                          <button type="submit" href="#activities" name="main_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
-                          </button>
-                      </fieldset>
-                </div>
+              	<h3 class="head text-center">Quest details</h3>
+              <div class="form-horizontal text-center" id="main_form" name="main_form" role="form">
+                    <%= render partial: 'quests/form', locals: { q: q } %>
+                    <fieldset>
+                        <button type="submit" href="#activities" name="main_form" class="btn-submit btn btn-success btn-outline-rounded green"> Next <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
+                        </button>
+                    </fieldset>
+              </div>
             </div>
             <div class="tab-pane fade" id="activities">
                 <h3 class="head text-center">Adding Activities</h3>
@@ -50,13 +50,12 @@
                 </div>
             </div>
             <div class="tab-pane fade" id="result">
-                <h3 class="head text-center">Bootsnipp goodies</h3>
-                <p class="narrow text-center"> Lorem ipsum dolor sit amet, his ea mollis fabellas principes. Quo mazim facilis tincidunt ut, utinam saperet facilisi an vim. </p>
+                <h3 class="head text-center">You're all set!</h3>
+                <p class="narrow text-center">Share your amazing quest to the nomads, for them to experience what you have experienced</p>
                 <div class="form-horizontal text-center" id="result_form" name="result_form" role="form">
                   <fieldset>
-                      <button type="submit" href="#main" name="result_form" class="btn-submit btn btn-success btn-outline-rounded green"> Back to beginning <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span>
-                      </button>
-                      <%=q .submit %>
+                      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" id='quest_submit'>
+                      	Publish now<i class="material-icons">add</i></button>
                   </fieldset>
                 </div>
             </div>

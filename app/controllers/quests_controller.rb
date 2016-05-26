@@ -8,6 +8,7 @@ class QuestsController < ApplicationController
   end
 
   def create
+    byebug
     @quest = current_user.quests.new(quest_params)
     if @quest.save
       redirect_to @quest
@@ -39,6 +40,6 @@ class QuestsController < ApplicationController
   def quest_params
     params.require(:quest).permit(:title, :duration, :country, :city, { photos: [] },
                                   :category, :description,
-                                  activities_attributes: [:day, :description, :estimated_time, :location, :price, :references, :photos])
+                                  activities_attributes: [:title, :day, :description, :estimated_time, :location, :price, :references, :photos])
   end
 end

@@ -9,6 +9,27 @@ div[class$="-activities"] {
 }
 /* written by riliwan balogun http://www.facebook.com/riliwan.rabo*/
 
+.upload_quest_photo {
+    text-align: left !important;
+}
+.quest_details {
+    .mdl-textfield {
+        width: 100%;
+    }
+}
+
+#quest_submit {
+    margin-bottom: 10px;
+}
+
+.quest-categories {
+    text-align: left;
+    select {
+        margin-left: 10px;
+        width: 30%;
+    }
+}
+
 .board {
     width: 75%;
     margin: 60px auto;
@@ -39,7 +60,7 @@ p.narrow {
     height: 2px;
     background: #ddd;
     position: absolute;
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     left: 0;
     right: 0;

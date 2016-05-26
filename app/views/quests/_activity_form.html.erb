@@ -12,36 +12,36 @@
 					</p>
 				</div>
 				<div class="mdl-card__supporting-text">
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<%= a.label :title, class: "mdl-textfield__label" %>
-						<%= a.text_field :title, class: "mdl-textfield__input"%>
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_field :title, class: "mdl-textfield__input", placeholder: 'Title' %>
 					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<%= a.label :location, class: "mdl-textfield__label" %>
-						<%= a.text_field :location, class: "mdl-textfield__input"%>
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_field :location, class: "mdl-textfield__input", placeholder: 'Location' %>
 					</div>
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<%= a.label :references, class: "mdl-textfield__label" %>
-						<%= a.text_field :references, class: "mdl-textfield__input"%>
-					</div>
-
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<%= a.label :estimated_time, class: "mdl-textfield__label" %>
-						<%= a.number_field :estimated_time, min: 0 , class: "mdl-textfield__input"%>
-					</div>
-
-					<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-						<%= a.label :price, 'Estimated Price', class: "mdl-textfield__label" %>
-						<%= a.number_field :price, min: 0 , class: "mdl-textfield__input"%>
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_field :references, class: "mdl-textfield__input", placeholder: 'Reference' %>
 					</div>
 
 					<div class="mdl-textfield mdl-js-textfield">
-						<%= a.label :description, class: 'mdl-textfield__label' %>
-						<%= a.text_area :description, class: 'mdl-textfield__input', rows: '3' %>
+						<label class="mdl-textfield__label"></label>
+						<%= a.number_field :estimated_time, min: 0 , class: "mdl-textfield__input", placeholder: 'Estimated Time'%>
 					</div>
 
-					<div>
-						<%= a.label :photos %>
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.number_field :price, min: 0 , class: "mdl-textfield__input", placeholder: 'Estimated Price'%>
+					</div>
+
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_area :description, class: 'mdl-textfield__input', rows: '3', placeholer: 'Description' %>
+					</div>
+
+					<div class="mdl-textfield mdl-js-textfield upload_quest_photo">
+						<%= a.label :'photos:' %>
 						<%= a.file_field :photos %>
 					</div>
 				</div>
