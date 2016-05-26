@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   get "/history" => "static#history", as: "history"
   get "/wishlist" => "static#wishlist", as: "wishlist"
+  get "/upcoming" => "static#upcoming", as: "upcoming"
 
   # Clearance routes
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
