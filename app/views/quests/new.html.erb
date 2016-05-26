@@ -1,11 +1,13 @@
-
 <div class="container">
-<div class="form-style-3">
-<fieldset><legend>Plan a New Quest!</legend>
     <div class="row">
+        <div class="col-md-5"></div>
+        <div class="form-style-3">
+    <fieldset><legend>Plan a New Quest!</legend>
+
+      <div class="row">
         <%= form_for [current_user, @quest], html: { class: 'form-vertical center' } do |q| %>
 
-          <div><%= q.label :title %>
+          <div><span><%= q.label :title %><span class="required">*</span></span>
             <%= q.text_field :title %></div>
 
           <!-- dropdown/number input -->
@@ -53,10 +55,12 @@
           <div><%= q.label :description %>
             <%= q.text_area :description %></div>
 
-    </div>
+    </div></fieldset></div>
 
-    <div class="row">
-        
+        <div class="col-md-4">
+
+        <div class="form-style-3">
+    <fieldset><legend>Add Activites!</legend>
 
         <ul class="tabs">
           <li class="tab-link current" data-tab="tab-1">Day 1</li>
@@ -222,9 +226,8 @@
     </div>
     </div>
     </div>
-  <div input type="submit"><%= q.submit %></div>
-<% end %>
-</div>
-</fieldset>
-</div>
+    <div input type="submit"><span>&nbsp;</span><%= q.submit %></div>
+  <% end %>
+        </fieldset></div>
+    </div>
 </div>
