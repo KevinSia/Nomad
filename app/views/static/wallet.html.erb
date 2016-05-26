@@ -13,7 +13,7 @@
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            <%=@user.first_name%> <%=@user.last_name%>
+           <%=@user.first_name%> <%=@user.last_name%>
           </div>
           <div class="profile-usertitle-job">
             Nomad
@@ -41,46 +41,43 @@
     </div>
     <div class="col-md-9">
             <div class="profile-content">
-            <div class="row">
+            <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+<body>
 
-              <div class="col-md-4">
-                <h2>Wish List</h2>
-                <%= link_to '#' do %>
-                  <%=image_tag("wish_list.png", size:"100x100")%>
-                <% end %>
-              </div>
+<div class="container">
+  <h2>Hover Rows</h2>
+  <p>The .table-hover class enables a hover state on table rows:</p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Quest</th>
+        <th>Dates</th>
+        <th>Price</th>
 
-              <div class="col-md-4">
-                <h2>Wallet</h2>
-                <%= link_to '#' do %>
-                  <%=image_tag("wallet.png", size:"100x100")%>
-                <% end %>
-              </div>
+      </tr>
+    </thead>
+    <tbody>
+    <%=@payment.each do |p|%>
+      <tr>
+        <td>p.quest_id</td>
+        <td>p.price</td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-              <div class="col-md-4">
-                <h2>Post a Quest</h2>
-                  <%= link_to '#' do %>
-                  <%=image_tag("post.png", size:"100x100")%>
-                <% end %>
-              </div>
-
-              <div class="col-md-4" style="margin-top: 30px";>
-                <h2>Upcoming Quests</h2>
-                  <%= link_to '#' do %>
-                  <%=image_tag("Quests.png", size:"100x100")%>
-                <% end %>
-              </div>
-
-              <div class="col-md-4" style="margin-top: 30px";>
-                <h2>Conquests</h2>
-                  <%= link_to '#' do %>
-                  <%=image_tag("goal.png", size:"100x100")%>
-                <% end %>
-
-
-
-            </div>
-
+</body>
+</html>
             </div>
             </div>
     </div>
@@ -91,5 +88,3 @@
 </center>
 <br>
 <br>
-
-<!-- http://bootsnipp.com/snippets/featured/user-profile-sidebar -->
