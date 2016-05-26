@@ -1,7 +1,7 @@
 $(window).scroll(function() {
     if($(this).scrollTop() > 400) {
-        $('.navbar-fixed-top').addClass('opaque');
+        $('.navbar-transparent').addClass('opaque');
     } else {
-        $('.navbar-fixed-top').removeClass('opaque');
+        $('.navbar-transparent').removeClass('opaque');
     }
 });

@@ -15,26 +15,20 @@
 
 <header>
   <% if signed_in? %>
-    <%= render "shared/session_navbar" %>
-  <% else %>
-    <%= render "shared/nosession_navbar" %>
-</header>
+      <%= render "shared/session_navbar" %>
+    <% else %>
+      <%= render "shared/nosession_navbar" %>
   <% end %>
+</header>
 
+<body>
+	<div>
+		<%= yield %>
+	</div>
+</body>
 
-	<body>
-		<div id="flash">
-		  <% flash.each do |key, value| %>
-		    <div class='alert alert-<%= key %>'><%= value %></div>
-		  <% end %>
-		</div>
-		<div>
-			<%= yield %>
-		</div>
-	</body>
-
-  <footer>
-    <%= render "shared/footer" %>
-  </footer>
+<footer>
+  <%= render "shared/footer" %>
+</footer>
 
 </html>

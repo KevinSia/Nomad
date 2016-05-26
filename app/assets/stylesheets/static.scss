@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.box {
+.wish-box {
   background:#fff;
   transition:all 0.2s ease;
   border:2px dashed #dadada;
@@ -14,33 +14,33 @@
   min-height:340px;
 }
 
-.box:hover {
+.wish-box:hover {
   border:2px solid #525C7A;
 }
 
-.box span.box-title {
+.wish-box span.box-title {
     color: #fff;
     font-size: 24px;
     font-weight: 300;
     text-transform: uppercase;
 }
 
-.box .box-content {
+.wish-box .box-content {
   padding: 18px;
   border-radius: 0 0 2px 2px;
   background-clip: padding-box;
   box-sizing: border-box;
 }
-.box .box-content p {
+.wish-box .box-content p {
   color:#515c66;
   text-transform:none;
 }
 
-.btn-block {
+.btn-wishlist-block {
     display: block;
     width: 100%;
 }
-.btn-primary {
+.btn-wishlist-primary {
     color: #fff;
     background-color: #03A9F4;
     border-color: transparent;
