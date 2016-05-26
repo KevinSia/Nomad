@@ -11,9 +11,17 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
-//= require bootstrap-sprockets
 //= require turbolinks
+//= require cocoon
+//= require masonry.pkgd
+//= imagesloaded.pkgd.min
+//= classie
+//= colorfinder-1.1
+//= gridScrollFx
+//= require modernizr.custom
+//= require bootstrap-sprockets
 //= require_tree .
 $(function(){
     $('.rating-select .btn').on('mouseover', function(){

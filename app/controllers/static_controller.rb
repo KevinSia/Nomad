@@ -1,6 +1,7 @@
 class StaticController < ApplicationController
   # landing page
   def home
+    @quests = Quest.all
     if signed_in?
       @status = 'user'
     else
@@ -10,5 +11,9 @@ class StaticController < ApplicationController
   end
 
   def dashboard
+  end
+
+  def wallet
+    @user = User.find(params[:user_id])
   end
 end

@@ -1,20 +1,18 @@
-<p style="font-size: large; "> User dashboard </p>
-
-
+<h2 style="font-size: large; "> User dashboard </h2>
 <div class="container">
-    <div class="row profile">
+  <div class="row profile">
     <div class="col-md-3">
       <div class="profile-sidebar">
+
         <!-- SIDEBAR USERPIC -->
         <div class="profile-userpic">
-        <img alt="Profile pic" src="/assets/Brian.jpg" class="img-responsive" alt="" />
-
+          <img alt="Profile pic" src="/assets/Brian.jpg" class="img-responsive" alt="" />
         </div>
         <!-- END SIDEBAR USERPIC -->
         <!-- SIDEBAR USER TITLE -->
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            Brian Tan
+            <%=@user.first_name%> <%=@user.last_name%>
           </div>
           <div class="profile-usertitle-job">
             Nomad
@@ -41,40 +39,45 @@
       </div>
     </div>
     <div class="col-md-9">
-            <div class="profile-content">
-            <div class="row">
-            <div class="col-md-4">
-                <h2>Wish List</h2>
-                <img alt="Wish List" src="/assets/wish.png" width="90" height="90" align="middle" />
-                <%= link_to 'Wish List', '/wishlist' %>
-                </div>
-              <div class="col-md-4">
-                <h2>Wallet</h2>
-                <img alt="wallet" src="/assets/wallet_icon.png" width="90" height="90"/>
-                <%= link_to 'Wallet', '#' %>
-              </div>
-              <div class="col-md-4">
-                <h2>Post a Quest</h2>
-                <img alt="Quest" src="/assets/Quest.png" width="90" height="90"/>
-                <%= link_to 'Post a Quest', '#' %>
-              </div>
-                <div class="col-md-4">
-                <h2>Upcoming Quests</h2>
-                <img alt="Quest" src="/assets/Quest.png" width="90" height="90"/>
-                <%= link_to 'Upcoming quests', '#' %>
-              </div>
-              <div class="col-md-4">
-                <h2>Conquests</h2>
-                <img alt="Quest" src="/assets/goal.png" width="90" height="90"/>
-                <%= link_to 'Quests History', '/history' %>
-              </div>
-            </div>
-            </div>
+      <div class="profile-content">
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Wish List</h2>
+            <%= link_to '#' do %>
+              <%=image_tag("wish_list.png", size:"100x100")%>
+            <% end %>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Wallet</h2>
+            <%= link_to '#' do %>
+              <%=image_tag("wallet.png", size:"100x100")%>
+            <% end %>
+          </div>
+
+          <div class="col-md-4">
+            <h2>Post a Quest</h2>
+            <%= link_to new_user_quest_path(current_user) do%>
+              <%=image_tag("post.png", size:"100x100")%>
+            <% end %>
+          </div>
+
+          <div class="col-md-4" style="margin-top: 30px";>
+            <h2>Upcoming Quests</h2>
+              <%= link_to '#' do %>
+              <%=image_tag("Quests.png", size:"100x100")%>
+            <% end %>
+          </div>
+
+          <div class="col-md-4" style="margin-top: 30px";>
+            <h2>Conquests</h2>
+              <%= link_to '#' do %>
+              <%=image_tag("goal.png", size:"100x100")%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+>>>>>>> master
     </div>
   </div>
 </div>
-<center>
-
-</center>
-<br>
-<br>
