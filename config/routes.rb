@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'quests/new'
+
+  get 'quests/show'
+
+  get 'quests/edit'
+
   root 'static#home'
   get "/dashboard" => "static#dashboard", as: "dashboard"
   get "/sign_in" => "clearance/sessions#new", as: "sign_in"
@@ -16,8 +22,12 @@ Rails.application.routes.draw do
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
 
+    resources :quests, only: [:new, :create, :edit, :update]
 
   end
+
+  # quests#index content is used in static#search
+  resources :quests, only: :show
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
