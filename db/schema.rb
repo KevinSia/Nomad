@@ -1,4 +1,4 @@
--# encoding: UTF-8
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +10,6 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended that you check this file into your version control system.
-
 
 ActiveRecord::Schema.define(version: 20160526031227) do
 
@@ -25,9 +24,9 @@ ActiveRecord::Schema.define(version: 20160526031227) do
     t.integer  "quest_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "title"
     t.integer  "price"
     t.integer  "estimated_time"
-    t.string   "title"
   end
 
   add_index "activities", ["quest_id"], name: "index_activities_on_quest_id", using: :btree

@@ -121,3 +121,29 @@ $(document).ready(function(){
 	// 	$(this).parents('div.quest-day').remove();
 	// });
 });
+
+//moving questbanner
+// Trigger class name on load
+window.onload = function() {
+  document.body.className += ' loaded'
+};
+
+//questbanner
+$(function() {
+    
+    $("questtitle")
+        .wrapInner("<span>")
+
+    $("questtitle br")
+        .before("<span class='spacer'>")
+        .after("<span class='spacer'>");
+
+});
+
+//activitybox
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+
