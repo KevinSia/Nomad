@@ -97,3 +97,6 @@ quest_12.activities.create(day:'',title:'',description:"",estimated_time:'',loca
 quest_12.activities.create(day:'',title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
 quest_12.activities.create(day:'',title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
 quest_12.activities.create(day:'',title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
+
+Payment.create(quest_id: 1, user_id: 1, price: 100)
+Payment.create(quest_id: 2, user_id: 2, price: 200)

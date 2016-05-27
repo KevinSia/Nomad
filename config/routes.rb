@@ -25,6 +25,8 @@ Rails.application.routes.draw do
     resources :quests, only: [:new, :create, :edit, :update]
   end
 
+  #routes for wallet
+  get "/users/:user_id/wallet" => "wallet#wallet", as: 'wallet'
 
   # quests#index content is used in static#search
   resources :quests, only: :show
