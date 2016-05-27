@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.box {
+.wish-box {
   background:#fff;
   transition:all 0.2s ease;
   border:2px dashed #dadada;
@@ -14,35 +14,128 @@
   min-height:340px;
 }
 
-.box:hover {
+.wish-box:hover {
   border:2px solid #525C7A;
 }
 
-.box span.box-title {
+.wish-box span.box-title {
     color: #fff;
     font-size: 24px;
     font-weight: 300;
     text-transform: uppercase;
 }
 
-.box .box-content {
+.wish-box .box-content {
   padding: 18px;
   border-radius: 0 0 2px 2px;
   background-clip: padding-box;
   box-sizing: border-box;
 }
-.box .box-content p {
+.wish-box .box-content p {
   color:#515c66;
   text-transform:none;
 }
 
-.btn-block {
+.btn-wishlist-block {
     display: block;
     width: 100%;
 }
-.btn-primary {
+.btn-wishlist-primary {
     color: #fff;
     background-color: #03A9F4;
     border-color: transparent;
     font-size: 18px;
+}
+
+//wishlist save button
+#hearts { color: #FF0000;}
+#hearts-existing { color: #87bad7;}
+
+//expanding search bar
+
+.search-form .form-group {
+  float: right !important;
+  transition: all 0.35s, border-radius 0s;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+.search-form .form-group input.form-control {
+  padding-right: 20px;
+  border: 0 none;
+  background: transparent;
+  box-shadow: none;
+  display:block;
+}
+.search-form .form-group input.form-control::-webkit-input-placeholder {
+  display: none;
+}
+.search-form .form-group input.form-control:-moz-placeholder {
+  /* Firefox 18- */
+  display: none;
+}
+.search-form .form-group input.form-control::-moz-placeholder {
+  /* Firefox 19+ */
+  display: none;
+}
+.search-form .form-group input.form-control:-ms-input-placeholder {
+  display: none;
+}
+.search-form .form-group:hover,
+.search-form .form-group.hover {
+  width: 100%;
+  border-radius: 4px 25px 25px 4px;
+}
+.search-form .form-group span.form-control-feedback {
+  position: absolute;
+  top: -1px;
+  right: -2px;
+  z-index: 2;
+  display: block;
+  width: 34px;
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  color: #3596e0;
+  left: initial;
+  font-size: 14px;
+}
+
+//trending number for wishlist
+
+.div-content{padding:30px}
+.btn{transition:all 0.8s;-o-transition:all 0.8s;-moz-transition:all 0.8s;-webkit-transition:all 0.8s;border-radius:0px;margin-top:10px}
+.btn-rounded{border-radius:50px}
+.btn-round-tosquare:hover{border-radius:0px}
+.btn-square-toround:hover{border-radius:50px}
+.btn-bordered-info{color:#5BC0DE;background:#FFFFFF;border:2px solid #5BC0DE}
+.btn-bordered-info:hover{color:#FFFFFF;background:#5BC0DE;border:2px solid #FFFFFF}
+.btn-xl
+{
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+}
+.country
+{
+color: lightcoral;
+}
+.date
+{
+	color: grey;
+}
+.price
+{
+	color:darksalmon;
+}
+
+
+//upcoming animated plane
+
+.glyphicon-plane {
+
+    color: darkturquoise;
 }

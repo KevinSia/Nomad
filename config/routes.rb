@@ -8,11 +8,13 @@ Rails.application.routes.draw do
 
   root 'static#home'
   get "/dashboard" => "static#dashboard", as: "dashboard"
-  get "/sign_in" => "clearance/sessions#new", as: "sign_in"
-  delete "/sign_out" => "clearance/sessions#destroy", as: "sign_out"
+  get "/sign_in" => "sessions#new", as: "sign_in"
+  delete "/sign_out" => "sessions#destroy", as: "sign_out"
   get "/sign_up" => "clearance/users#new", as: "sign_up"
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   get "/history" => "static#history", as: "history"
+  get "/wishlist" => "static#wishlist", as: "wishlist"
+  get "/upcoming" => "static#upcoming", as: "upcoming"
 
   # Clearance routes
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -22,7 +24,9 @@ Rails.application.routes.draw do
     resource :password,
       controller: "clearance/passwords",
       only: [:create, :edit, :update]
+
     resources :quests, only: [:new, :create, :edit, :update]
+
   end
 
 
@@ -56,7 +60,7 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-
+  get "/users/:user_id/wallet" => "static#wallet", as: "wallet"
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
