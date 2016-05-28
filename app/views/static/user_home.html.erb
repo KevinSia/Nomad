@@ -1,3 +1,24 @@
+<header>
+  <% if signed_in? %>
+      <%= render "shared/session_navbar" %>
+    <% else %>
+      <%= render "shared/nosession_navbar" %>
+  <% end %>
+</header>
+
+
 <div class="padding-top">
-<%= render "shared/grid" %>
+  <div class="padding-top">
+    <%= render "shared/carousel" %>
+  </div>
 </div>
+
+<div class="padding container"><hr></div>
+
+<div>
+  <%= render "shared/grid" %>
+</div>
+
+<footer>
+  <%= render "shared/footer" %>
+</footer>
