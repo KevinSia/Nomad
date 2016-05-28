@@ -1,0 +1,54 @@
+<div>
+	<%= link_to 'Add new activity!', '#', class: 'btn btn-primary', id:'addActivity'%>
+</div>
+
+<div id='activities_form'>
+	<div class='row' style='padding-bottom: 20px;' id='quest-activities'>
+		<%= q.fields_for :activities do |a| %>
+			<div class='col-md-4 quest-activity' id='quest-activity-1'>
+				<div class="mdl-card__title">
+					<p>
+						<strong>Activity 1</strong>
+					</p>
+				</div>
+				<div class="mdl-card__supporting-text">
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_field :title, class: "mdl-textfield__input", placeholder: 'Title' %>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_field :location, class: "mdl-textfield__input", placeholder: 'Location' %>
+					</div>
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_field :references, class: "mdl-textfield__input", placeholder: 'Reference' %>
+					</div>
+
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.number_field :estimated_time, min: 0 , class: "mdl-textfield__input", placeholder: 'Estimated Time'%>
+					</div>
+
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.number_field :price, min: 0 , class: "mdl-textfield__input", placeholder: 'Estimated Price'%>
+					</div>
+
+					<div class="mdl-textfield mdl-js-textfield">
+						<label class="mdl-textfield__label"></label>
+						<%= a.text_area :description, class: 'mdl-textfield__input', rows: '3', placeholer: 'Description' %>
+					</div>
+
+					<div class="mdl-textfield mdl-js-textfield upload_quest_photo">
+						<%= a.label :'photos:' %>
+						<%= a.file_field :photos %>
+					</div>
+				</div>
+				<div class="mdl-card__actions">
+					<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect remove_activity" data-activity= '1'>Remove Activity</a>
+  			</div>
+			</div>
+		<% end %>
+	</div>
+</div>

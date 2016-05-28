@@ -19,28 +19,49 @@
 @import "bootstrap";
 @import "*";
 
+//Fonts
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
 // Basic setup
 html,body {
   height: 100%;
   width: 100%;
 }
 
-body.modal-open {
-  padding-right: 0% !important;
-  overflow-y: auto;
+// Padding
+.padding {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media screen and (min-width: 699px) {
+.padding-top {
+  padding-top: 60px }
 }
 
 // Navbar
-.navbar-fixed-top {
+
+@media screen and (min-width: 699px) {
+  .navbar-color {
+    background-color: #333333;
+    padding: 10px;
+ }
+
+ .navbar-transparent {
   background-color: transparent;
   color: #ffffff;
   padding: 10px;
   transition: background-color .5s ease 0s;
-}
+ }
 
-.navbar-fixed-top.opaque {
-  background-color: rgb(199, 198, 182);
+ .navbar-transparent.opaque {
+  background-color: #333333;
   transition: background-color .5s ease 0s;
+ }
+
+ .navbar-right > ul > a {
+   color: white;
+ }
 }
 
 .navbar-brand {
@@ -54,7 +75,7 @@ body.modal-open {
 
 // Hero Background (Landing Page)
 #hero-container {
-   background: url(main_banner.jpg) no-repeat center center fixed;
+   background: url(images/mainbanner3.jpg) no-repeat center center fixed;
    display: table;
    height: 100vh;
    width: 100%;
@@ -65,10 +86,17 @@ body.modal-open {
    background-size: cover;
 }
 
-.hero-main {
- margin-top: 400px;
+.circle {
+  position: absolute;
+  bottom: 8%;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.hero-text {
  font-size: 4.0vw;
- font-weight: 200;
+ font-family: 'Pacifico', cursive;
+ color: white;
 }
 
 .hero-welcome {
@@ -79,6 +107,11 @@ body.modal-open {
 
 
 // Login Modal
+body.modal-open {
+  padding-right: 0% !important;
+  overflow-y: auto;
+}
+
 #login-dp{
     min-width: 250px;
     padding: 14px 14px 0;
