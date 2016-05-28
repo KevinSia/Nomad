@@ -92,8 +92,6 @@ quest_11.activities.create(title:'',description:"",estimated_time:'',location:''
 quest_11.activities.create(title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
 
 quest_12 = Quest.create(title: 'Love in The Air - Paris',duration: '3',country:'France',city:'Paris',category:'Couple',description:'Romantic couple trip',user_id:1)
-quest_12.activities.create(title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
-quest_12.activities.create(title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
-quest_12.activities.create(title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
-quest_12.activities.create(title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
-quest_12.activities.create(title:'',description:"",estimated_time:'',location:'',price:'',references:'',quest_id:1)
+
+Payment.create(quest_id: 1, user_id: 1, price: 100)
+Payment.create(quest_id: 2, user_id: 2, price: 200)

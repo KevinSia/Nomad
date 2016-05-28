@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'quests/new'
-
-  get 'quests/show'
-
-  get 'quests/edit'
-
   root 'static#home'
   get "/dashboard" => "static#dashboard", as: "dashboard"
   get "/sign_in" => "sessions#new", as: "sign_in"
@@ -15,6 +9,7 @@ Rails.application.routes.draw do
   get "/history" => "static#history", as: "history"
   get "/wishlist" => "static#wishlist", as: "wishlist"
   get "/upcoming" => "static#upcoming", as: "upcoming"
+  get "/users/:user_id/wallet" => "wallet#wallet", as: 'wallet'
 
   # Clearance routes
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -29,6 +24,7 @@ Rails.application.routes.draw do
 
   end
 
+  #routes for wallet
 
   # quests#index content is used in static#search
   resources :quests, only: :show
@@ -60,7 +56,6 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  get "/users/:user_id/wallet" => "static#wallet", as: "wallet"
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
