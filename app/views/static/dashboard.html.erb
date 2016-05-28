@@ -50,22 +50,27 @@
     <div id="page-content-wrapper">
         <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12">
-                <div class="profile-content">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <h2>Wish List</h2>
-                      <%= link_to '#' do %>
-                        <%=image_tag("wish_list.png", size:"100x100")%>
-                      <% end %>
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                          Wishlist <div class="line r"></div>
+                        </div>
+                        <div class="panel-body">
+                          <%= link_to '#' do %>
+                            <%=image_tag("wish_list.png", size:"100x100")%>
+                          <% end %>
+                        </div>
                     </div>
-
-                    <div class="col-md-4">
-                      <h2>Wallet</h2>
-                      <%= link_to '#' do %>
-                        <%=image_tag("wallet.png", size:"100x100")%>
-                      <% end %>
-                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 panel panel-default">
+                    <h2>Wallet</h2>
+                    <%= link_to '#' do %>
+                      <%=image_tag("wallet.png", size:"100x100")%>
+                    <% end %>
+                </div>
+            </div>
 
                     <div class="col-md-4">
                       <h2>Post a Quest</h2>
