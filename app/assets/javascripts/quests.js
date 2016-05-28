@@ -29,6 +29,7 @@ $(function(){
 window.onload = function() {
   document.body.className += ' loaded'
 };
+//end of moving questbanner
 
 
 
@@ -38,4 +39,7 @@ $(".hover").mouseleave(
     $(this).removeClass("hover");
   }
 );
+//end of activitybox
+
+
 
