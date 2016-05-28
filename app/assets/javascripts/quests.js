@@ -8,8 +8,8 @@ $(function(){
 			/* Only works in Firefox/Chrome need polyfill for IE9, Safari. http://afarkas.github.io/webshim/demos/ */
 			e.preventDefault();
 			$('ul.nav li a[href="' + tabname + '"]').parent().removeClass('disabled');
-			$('ul.nav li a[href="' + tabname + '"]').trigger('click'); }
-		});
+			$('ul.nav li a[href="' + tabname + '"]').trigger('click'); 
+		}
 
 		$('ul.nav li').on('click', function(e) {
 			if ($(this).hasClass('disabled')) {
@@ -17,10 +17,29 @@ $(function(){
 				return false;
 			}
 		});
+	});
+	// $('.remove_day').on('click', function(e){
+	// 	e.preventDefault;
+	// 	$(this).parents('div.quest-day').remove();
+	// });
 });
 
-//click button
-//prevent default
-//find formname
-//find tabname
-//
+//moving questbanner
+// Trigger class name on load
+window.onload = function() {
+  document.body.className += ' loaded'
+};
+//end of moving questbanner
+
+
+
+//activitybox
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+//end of activitybox
+
+
+

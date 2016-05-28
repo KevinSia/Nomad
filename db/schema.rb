@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20160526085207) do
     t.integer  "quest_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "title"
     t.integer  "price"
     t.integer  "estimated_time"
-    t.string   "title"
     t.json     "photos"
   end
 
