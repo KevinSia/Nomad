@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/wishlist" => "static#wishlist", as: "wishlist"
   get "/upcoming" => "static#upcoming", as: "upcoming"
   get "/users/:user_id/wallet" => "wallet#wallet", as: 'wallet'
+  get "/teamprofile" => "static#teamprofile", as: "teamprofile"
 
   # Clearance routes
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
