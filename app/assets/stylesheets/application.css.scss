@@ -59,19 +59,21 @@ html,body {
   transition: background-color .5s ease 0s;
  }
 
- .navbar-right > ul > a {
+ .navbar-right > ul > li > a {
    color: white;
+ }
+
+ .navbar-brand {
+   padding: 0px;
+ }
+
+ .navbar-brand > img {
+   height: 60px;
+   padding-bottom: 7px;
+   width: auto;
  }
 }
 
-.navbar-brand {
-  padding: 0px;
-}
-.navbar-brand>img {
-  height: 60px;
-  padding-bottom: 7px;
-  width: auto;
-}
 
 // Hero Background (Landing Page)
 #hero-container {
@@ -86,7 +88,7 @@ html,body {
    background-size: cover;
 }
 
-.circle {
+.hero-circle {
   position: absolute;
   bottom: 8%;
   vertical-align: middle;

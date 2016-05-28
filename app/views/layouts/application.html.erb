@@ -13,22 +13,11 @@
   <%= csrf_meta_tags %>
 </head>
 
-<header>
-  <% if signed_in? %>
-      <%= render "shared/session_navbar" %>
-    <% else %>
-      <%= render "shared/nosession_navbar" %>
-  <% end %>
-</header>
-
 <body>
 	<div>
 		<%= yield %>
 	</div>
 </body>
 
-<footer>
-  <%= render "shared/footer" %>
-</footer>
 
 </html>
