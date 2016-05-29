@@ -7,7 +7,7 @@ class UsersController < Clearance::UsersController
 
     if @user.save
       sign_in @user
-      flash[:success] = 'Welcome :)'
+      flash[:success] = 'Welcome to Nomad :)'
       redirect_back_or url_after_create
     else
       render template: "users/new"
@@ -24,8 +24,6 @@ class UsersController < Clearance::UsersController
 
   def update
     if @user.update(permit_params)
-      sign_in @user
-      flash[:success] = 'Welcome :)'
       redirect_to user_path(@user)
     else
       render template: "users/edit"
@@ -49,6 +47,6 @@ class UsersController < Clearance::UsersController
   end
 
   def permit_params
-    params.require(:user).permit(:first_name, :last_Name, :email, :password)
+    params.require(:user).permit(:first_name, :last_Name, :bio, :email, :password)
   end
 end
