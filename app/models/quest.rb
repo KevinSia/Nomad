@@ -22,4 +22,8 @@ class Quest < ActiveRecord::Base
   def total_price
     activities.sum(:price)
   end
+
+  def is_wished?(user)
+    wishes.find_by(user_id: user.id)
+  end
 end
