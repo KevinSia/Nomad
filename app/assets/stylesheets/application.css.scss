@@ -59,8 +59,9 @@ html,body {
   transition: background-color .5s ease 0s;
  }
 
- .navbar-right a {
+ .navbar-right a, a:hover {
   color: white;
+  background-color: transparent !important;
 }
 
  .navbar-brand {
@@ -73,7 +74,6 @@ html,body {
    width: auto;
  }
 }
-
 
 // Hero Background (Landing Page)
 #hero-container {
@@ -315,14 +315,4 @@ body.modal-open {
 }
 .payments {
 	font-size: 1.5em;
-}
-
-.container_1
-{
-  width: 900px;
-}
-
-.container_2
-{
-  width: 900px;
 }
