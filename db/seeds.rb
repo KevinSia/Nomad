@@ -6,13 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create(email: 'admin@nomad.com', password: 'nomad', first_name: 'admin')
+# User.create(email: 'admin@nomad.com', password: 'nomad', first_name: 'admin')
 
 quest_1 = Quest.create(title: 'Love in The Air - Paris',duration: '3',country:'France',city:'Paris',category:'Couple',description:'Romantic couple trip',user_id:1)
 quest_1.activities.create(title:"The Louvre",description:"One of the world’s most authoritative museums, the Louvre's collection.",estimated_time:'4',location:'The Louvre',price:'180',references:"https://www.tiqets.com/en/paris-c66746/louvre-museum-skip-the-line-p973698?gclid=CjwKEAjw1Iq6BRDY_tK-9OjdmBESJABlzoY7h3pYHDZ0QLRok5riwTjVn6osM0d6ZNKF9vfRVhNUEBoChcvw_wcB",quest_id:1)
 quest_1.activities.create(title:"Eiffel Tower Tour by Night",description:"Cap off a perfect day in Paris with unforgettable views from the Eiffel Tower.",estimated_time:'3',location:'Eiffel Tower',price:'180',references:"http://www.viator.com/tours/Paris/Skip-the-Line-Eiffel-Tower-Tour-by-Night/d479-3731EIFFELNIGHT",quest_id:1)
 quest_1.activities.create(title:'Notre Dame Catherdral Paris',description:"It was one of the very first Gothic cathedrals, and its construction took place throughout the Gothic period.",estimated_time:'3',location:'Notre Dame Cathedral Paris',price:'150',references:'http://www.notredamecathedralparis.com',quest_id:1)
-quest_1.activities.create(title:'Latin Quarter - St. Michel',description:"Famous for its Bistros, nightlife and shopping avenues.",estimated_time:'2',location:'Latin Quarter - St. Michel',price:'0',references:'http://www.aparisguide.com/latin-quarter/',quest_id:1)
+quest_1.activities.create(title:'Latin Quarter-St. Michel',description:"Famous for its Bistros, nightlife and shopping avenues.",estimated_time:'2',location:'Latin Quarter - St. Michel',price:'0',references:'http://www.aparisguide.com/latin-quarter/',quest_id:1)
 quest_1.activities.create(title:'Champs-Elysées',description:"One of The most famous avenue in the world. Two kilometers long and seventy meters wide.",estimated_time:'5',location:'Champs-Elysées',price:'0',references:'http://www.aviewoncities.com/paris/champselysees.htm',quest_id:1)
 
 quest_2 = Quest.create(title: 'Escape to Seoul Nature with your loved ones',duration: '4',country:'Korea',city:'Seoul',category:'Family',description:'Back to nature in Seoul, Korea',user_id:1)

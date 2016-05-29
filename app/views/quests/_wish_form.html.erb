@@ -1,0 +1,7 @@
+<%= form_for Wish.new, url: quest_wish_path(@quest) do |f| %>
+  <!-- <p><input type="date" class="datepicker" placeholder="Start Date"></p>
+  <p><input type="date" class="datepicker" placeholder="End Date"></p> -->
+  <!--Submit Button-->
+  <h3>There are <%= @quest.wishes.count %> people who wished on this quest</h3>
+  <button class="btn btn-block btn-primary" type="submit" name="action">Add into wishlist!</button>
+<% end %>
