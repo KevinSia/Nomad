@@ -1,7 +1,9 @@
 class Quest < ActiveRecord::Base
 
   has_many :activities, dependent: :destroy
-  has_many :wishes, dependent: :destroy
+  has_many :wishes
+  has_many :bookings
+  has_many :comments
   belongs_to :user
 
   accepts_nested_attributes_for :activities
