@@ -1,17 +1,12 @@
-<p style="font-size: large; "> User dashboard </p>
-
-
-<div class="container">
-    <div class="row profile">
-    <div class="col-md-3">
-      <div class="profile-sidebar">
-        <!-- SIDEBAR USERPIC -->
+<div id="wrapper">
+    <!-- Sidebar -->
+  <div id="sidebar-wrapper" >
+    <div class="container">
+      <ul class="sidebar-nav padding-top">
         <div class="profile-userpic">
-        <img alt="Profile pic" src="/assets/Brian.jpg" class="img-responsive" alt="" />
-
+          <img alt="Profile pic" src="/assets/Brian.jpg" class="img-responsive" alt="" />
         </div>
-        <!-- END SIDEBAR USERPIC -->
-        <!-- SIDEBAR USER TITLE -->
+
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
             Brian Tan
@@ -20,61 +15,76 @@
             Nomad
           </div>
         </div>
-        <!-- END SIDEBAR USER TITLE -->
-        <!-- SIDEBAR BUTTONS -->
         <div class="profile-userbuttons">
           <button type="button" class="btn btn-success btn-sm">Follow</button>
         </div>
-        <!-- END SIDEBAR BUTTONS -->
-        <!-- SIDEBAR MENU -->
         <div class="profile-usermenu">
           <ul class="nav">
             <li class="active">
-            <%= link_to 'Edit profile', edit_user_path(current_user) %>
+              <%= link_to 'Edit profile', edit_user_path(current_user) %>
+            </li>
+            <li>
+              <a href="#">Post a quest</a>
+            </li>
+            <li>
+              <a href="#">Wallet</a>
+            </li>
+            <li>
+              <a href="#">Wish List</a>
+            </li>
+            <li>
+              <a href="#">Upcoming Quests</a>
+            </li>
+            <li>
+              <a href="#">Conquests</a>
             </li>
             <li>
             <%= link_to 'Log Out', sign_out_path, method: :delete %>
             </li>
           </ul>
         </div>
-        <!-- END MENU -->
-      </div>
-    </div>
-    <div class="col-md-9">
-            <div class="profile-content">
-            <div class="row">
-            <div class="col-md-4">
-                <h2>Wish List</h2>
-                <img alt="Wish List" src="/assets/wish.png" width="90" height="90" align="middle" />
-                <%= link_to 'Wish List', '/wishlist' %>
-                </div>
-              <div class="col-md-4">
-                <h2>Wallet</h2>
-                <img alt="wallet" src="/assets/wallet_icon.png" width="90" height="90"/>
-                <%= link_to 'Wallet', '#' %>
-              </div>
-              <div class="col-md-4">
-                <h2>Post a Quest</h2>
-                <img alt="Quest" src="/assets/Quest.png" width="90" height="90"/>
-                <%= link_to 'Post a Quest', '#' %>
-              </div>
-                <div class="col-md-4">
-                <h2>Upcoming Quests</h2>
-                <img alt="Quest" src="/assets/Quest.png" width="90" height="90"/>
-                <%= link_to 'Upcoming quests', '#' %>
-              </div>
-              <div class="col-md-4">
-                <h2>Conquests</h2>
-                <img alt="Quest" src="/assets/goal.png" width="90" height="90"/>
-                <%= link_to 'Quests History', '/history' %>
-              </div>
-            </div>
-            </div>
+      </ul>
     </div>
   </div>
-</div>
-<center>
+  <!-- /#sidebar-wrapper -->
 
-</center>
-<br>
-<br>
+  <!-- Page Content -->
+  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+  <div id="page-content-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="panel panel-default">
+                  <div class="panel-heading">
+                    Wishlist <div class="line r"></div>
+                  </div>
+                  <div class="panel-body">
+                    <%= link_to '#' do %>
+                      <%=image_tag("wish_list.png", size:"100x100")%>
+                    <% end %>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 panel panel-default">
+              <h2>Wallet</h2>
+              <%= link_to '#' do %>
+                <%=image_tag("wallet.png", size:"100x100")%>
+              <% end %>
+          </div>
+      </div>
+    </div>
+  </div>
+    <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+
+
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>

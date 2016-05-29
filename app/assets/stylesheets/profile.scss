@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-body {
-  background: #F1F3FA;
-}
-
 /* Profile container */
 .profile {
   margin: 20px 0;
@@ -109,4 +104,19 @@ body {
   padding: 20px;
   background: #fff;
   min-height: 460px;
+}
+
+.profile-usertitle-name
+{
+  font-size: x-large;
+}
+
+.profile-usertitle-job
+{
+  font-size: large;
+}
+
+.active
+{
+  font-size: large;
 }

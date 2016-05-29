@@ -1,3 +1,76 @@
-<h1>Welcome to Nomad</h1>
-<p>A community for travel lovers</p>
-<p><%= link_to 'Join us now!', sign_up_path %></p>
+<header>
+  <% if signed_in? %>
+      <%= render "shared/session_navbar" %>
+    <% else %>
+      <%= render "shared/nosession_navbar" %>
+  <% end %>
+</header>
+
+<body>
+
+<div id="hero-container" class="container-fluid">
+  <div class="hero-welcome">
+      <div class="site-wrapper-inner">
+        <div class="hero-text">
+          It's time to go on an adventure.
+        </div>
+
+      <div class="row">
+        <div class="col-xs-12 hero-circle">
+          <%=image_tag('circle.png') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> <!-- hero-container -->
+
+<section id="deals">
+  <div class="container-fluid padding" style="background-color:#f7f7f7">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 text-center">
+              <h2>Find a Quest</h2>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <div class="col-md-4 text-center">
+              <h2>Add to wish list</h2>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+
+            <div class="col-md-4 text-center">
+              <h2>Share and begin your adventure</h2>
+              <p>
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              </p>
+            </div>
+          </div>
+      </div>
+  </div>
+</section> <!-- Deals section -->
+
+
+<section id="carousel" class="padding">
+  <%= render "shared/carousel" %>
+</section>
+
+<div class="container">
+  <hr>
+</div>
+
+<section id="grid-wrap">
+  <div class="container">
+    <%= render "shared/grid" %>
+  </div>
+</section>
+
+
+</body>
+
+<footer>
+  <%= render "shared/footer" %>
+</footer>
