@@ -115,3 +115,11 @@ $( document ).ready(function() {
     $('#count-existing').html(value);
   });
 });
+
+//team profile
+$(".hover").mouseleave(
+  function () {
+    $(this).removeClass("hover");
+  }
+);
+
