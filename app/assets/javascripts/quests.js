@@ -8,7 +8,7 @@ $(function(){
       /* Only works in Firefox/Chrome need polyfill for IE9, Safari. http://afarkas.github.io/webshim/demos/ */
       e.preventDefault();
       $('ul.nav li a[href="' + tabname + '"]').parent().removeClass('disabled');
-      $('ul.nav li a[href="' + tabname + '"]').trigger('click'); 
+      $('ul.nav li a[href="' + tabname + '"]').trigger('click');
     }
 
     $('ul.nav li').on('click', function(e) {
@@ -22,6 +22,13 @@ $(function(){
   //  e.preventDefault;
   //  $(this).parents('div.quest-day').remove();
   // });
+
+  // datepicker start
+  $('.datepicker').pickadate({
+    selectMonths: true, // Creates a dropdown to control month
+    selectYears: 15 // Creates a dropdown of 15 years to control year
+  });
+  // datepicker end
 });
 
 
@@ -45,14 +52,7 @@ $(".hover").mouseleave(
 
 //end of comments section
 
-//Date Picker
 
- $('.datepicker').pickadate({
-    selectMonths: true, // Creates a dropdown to control month
-    selectYears: 15 // Creates a dropdown of 15 years to control year
-  });
-       
-//end of Date Picker
 
 /*banner profile section*/
 function EasyPeasyParallax() {
