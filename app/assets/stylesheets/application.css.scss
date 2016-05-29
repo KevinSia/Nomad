@@ -17,7 +17,10 @@
 // Requirements for bootstrap-gem
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "pickadate/default";
+@import "pickadate/default.date";
 @import "*";
+
 
 //Fonts
 @import url(https://fonts.googleapis.com/css?family=Gloria+Hallelujah);

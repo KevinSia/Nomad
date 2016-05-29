@@ -22,7 +22,11 @@ class User < ActiveRecord::Base
   end
 
   def fullname
-    "#{first_name}" + last_name ? " #{last_name}" : ""
+    if first_name?
+      "#{first_name}" + (last_name ? " #{last_name}" : "")
+    else
+      "Traveler"
+    end
   end
 
   def fb_token
