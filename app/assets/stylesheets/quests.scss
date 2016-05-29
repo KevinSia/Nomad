@@ -2,11 +2,12 @@
 .activity-day {
     padding-bottom: 15px;
 }
+
 div[class$="-activities"] {
 
-	strong {
-		text-decoration: underline;
-	}
+  strong {
+    text-decoration: underline;
+  }
 }
 
 /* vinsee css start */
@@ -206,12 +207,12 @@ main p { margin: 0 0 3rem 0; }
 }
 
 #price{
-	color:coral;
-	font-size: 30px;
+  color:coral;
+  font-size: 30px;
 }
 
 #ActvTitle{
-	color:darkgrey;
+  color:darkgrey;
 }
 
 //profile card
@@ -397,17 +398,27 @@ p {
 .comment-actions li:hover {
   color: #0095ff;
 }
-
-
-
 //end of Comments Section
 
 
-//Date Picker
+//banner profile section
+#bannertext h1{
+  font: 700 2.8em/1.2 "Droid Sans", sans-serif;
+}
+
+#bannertext {
+  width: 24em;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  border: .5em solid #fff;
+  margin-left: -12em;
+  padding: 2em 0;
+}
 
 
+//end of banner profile section
 
-//end of Date Picker
 
 /* vinsee css ends */
 
@@ -635,3 +646,6 @@ li.active:after {
     }
 }
 /* kevin css ends */
+
+
+
