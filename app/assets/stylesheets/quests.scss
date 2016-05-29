@@ -20,11 +20,9 @@ div[class$="-activities"] {
 /* 1rem = 10px */
 html { font-size: 100%; }
 
-/* Default body */
+/* Default body, THIS IS CAUSING THE FONT TO GO WAY ABOVE SIZE*/
 body {
-  margin: 0;
-  opacity: 0;
-  font: 1.6rem/1.875 'Avenir Next', sans-serif;
+  font-family: 'Avenir Next', sans-serif;
 }
 
 /* Loaded body */
@@ -53,7 +51,9 @@ body.loaded {
   top: 0;
   z-index: -1;
   transform: translate3d(0,0,0) scale(1.25);
-  background: black url("/assets/japan.jpg") no-repeat center center;
+  background-image: url(image-path("japan.jpg"));
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
 
 }
@@ -88,6 +88,7 @@ main p { margin: 0 0 3rem 0; }
 
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,800);
 @import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
 .snip1401 {
   font-family: 'Playfair Display', Arial, sans-serif;
   position: relative;

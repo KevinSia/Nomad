@@ -9,28 +9,25 @@
 
         <div class="profile-usertitle">
           <div class="profile-usertitle-name">
-            Brian Tan
+            USER FIRSTNAME NO WORK! WHY DO DIS!
           </div>
           <div class="profile-usertitle-job">
             Nomad
           </div>
         </div>
-        <div class="profile-userbuttons">
-          <button type="button" class="btn btn-success btn-sm">Follow</button>
-        </div>
         <div class="profile-usermenu">
           <ul class="nav">
-            <li class="active">
+            <li>
               <%= link_to 'Edit profile', edit_user_path(current_user) %>
             </li>
             <li>
               <a href="#">Post a quest</a>
             </li>
             <li>
-              <a href="#">Wallet</a>
+              <a href="#">Wishlist</a>
             </li>
             <li>
-              <a href="#">Wish List</a>
+              <a href="#">Wallet</a>
             </li>
             <li>
               <a href="#">Upcoming Quests</a>
@@ -39,7 +36,13 @@
               <a href="#">Conquests</a>
             </li>
             <li>
-            <%= link_to 'Log Out', sign_out_path, method: :delete %>
+              <a href="#">Planner (Coming soon!)</a>
+            </li>
+            <li>
+              <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+              <%= link_to 'Log Out', sign_out_path, method: :delete %>
             </li>
           </ul>
         </div>
@@ -49,32 +52,173 @@
   <!-- /#sidebar-wrapper -->
 
   <!-- Page Content -->
-  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
   <div id="page-content-wrapper">
-    <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="panel panel-default">
-                  <div class="panel-heading">
-                    Wishlist <div class="line r"></div>
-                  </div>
-                  <div class="panel-body">
-                    <%= link_to '#' do %>
-                      <%=image_tag("wish_list.png", size:"100x100")%>
-                    <% end %>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="row">
-          <div class="col-md-12 panel panel-default">
-              <h2>Wallet</h2>
-              <%= link_to '#' do %>
-                <%=image_tag("wallet.png", size:"100x100")%>
-              <% end %>
-          </div>
-      </div>
-    </div>
+	    <div class="container-fluid">
+		      <div class="row">
+		          <div class="col-md-12">
+		              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+		              <span>Did you know you could hide the sidebar?
+									 Try it! Click on the menu toggle.<span>
+		              <hr>
+							</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-4">
+									<div class="panel panel-default">
+											<div class="panel-heading">
+													<i class="fa fa-bell fa-fw"></i> Notifications Panel
+											</div>
+											<!-- /.panel-heading -->
+											<div class="panel-body">
+													<div class="list-group">
+															<a href="#" class="list-group-item">
+																	<i class="fa fa-comment fa-fw"></i> New Comment
+																	<span class="pull-right text-muted small"><em>4 minutes ago</em>
+																	</span>
+															</a>
+															<a href="#" class="list-group-item">
+																	<i class="fa fa-twitter fa-fw"></i> 3 New Followers
+																	<span class="pull-right text-muted small"><em>12 minutes ago</em>
+																	</span>
+															</a>
+															<a href="#" class="list-group-item">
+																	<i class="fa fa-envelope fa-fw"></i> Message Sent
+																	<span class="pull-right text-muted small"><em>27 minutes ago</em>
+																	</span>
+															</a>
+															<a href="#" class="list-group-item">
+																	<i class="fa fa-bolt fa-fw"></i> Server Crashed!
+																	<span class="pull-right text-muted small"><em>11:13 AM</em>
+																	</span>
+															</a>
+															<a href="#" class="list-group-item">
+																	<i class="fa fa-money fa-fw"></i> Payment Received
+																	<span class="pull-right text-muted small"><em>Yesterday</em>
+																	</span>
+															</a>
+													</div>
+													<!-- /.list-group -->
+													<a href="#" class="btn btn-default btn-block">View All Alerts</a>
+											</div>
+											<!-- /.panel-body -->
+									</div>
+									<!-- /.panel -->
+							</div>
+							<div class="col-md-6">
+				          <div class="panel panel-default">
+				              <div class="panel-heading">
+				                <i class="fa fa-heart fa-fw"></i> Wishlist
+				              </div>
+				              <div class="panel-body">
+				                <%= link_to '#' do %>
+				                  <%=image_tag("wish_list.png", size:"100x100")%>
+				                <% end %>
+				              </div>
+				          </div>
+							</div>
+					</div> <!-- End of row -->
+
+					<div class="row">
+							<div class="col-md-12">
+									<div class="panel panel-default">
+						          <div class="panel-heading">
+						            Wallet
+						          </div>
+						          <div class="panel-body">
+													<h4>Payment history</h4>
+													<p>All completed quests</p>
+													<table class="table table-hover">
+														<thead>
+															<tr>
+																<th>Conquest</th>
+																<th>Price ($)</th>
+																<th>Travel Guru</th>
+																<th>Start Date </th>
+																<th>End Date </th>
+															</tr>
+														</thead>
+														<tbody>
+															 <tr>
+																<td>Love in The Air - Paris</td>
+																<td>410</td>
+																<td>Khairul Idzham</td>
+																<td>23/3/2015</td>
+																<td>02/4/2015</td>
+															</tr>
+
+															 <tr>
+																<td>Escape to Seoul Nature with your loved ones</td>
+																<td>300</td>
+																<td>Josh Teng</td>
+																<td>4/5/2016</td>
+																<td>10/5/2016</td>
+															</tr>
+
+															</tbody>
+													</table>
+
+													<div class="padding-top"></div>
+
+													<h4>Amount Earned</h4>
+													<p>Money earned from being a travel guru</p>
+													<table class="table table-hover">
+														<thead>
+															<tr>
+																<th>Quest</th>
+																<th>Wishes</th>
+																<th>Purchases </th>
+																<th>Monthly Earned</th>
+																<th>Last Paid</th>
+																<th>Pending<br>Payment ($)</th>
+																<th>Due date</th>
+																<th>Total Earned ($)</th>
+															</tr>
+														</thead>
+														<tbody>
+																<tr>
+																<td>Travel around Kuala Lumpur</td>
+																<td>1000</td>
+																<td>856</td>
+																<td>200</td>
+																<td>30/4/2016</td>
+																<td>300</td>
+																<td>30/5/2016</td>
+																<td>1,712</td>
+															</tr>
+															</tbody>
+
+															 <tbody>
+																<tr>
+																<td>Sharm El Sheikh</td>
+																<td>800</td>
+																<td>300</td>
+																<td>100</td>
+																<td>30/4/2016</td>
+																<td>80</td>
+																<td>30/5/2016</td>
+																<td>675</td>
+															</tr>
+															</tbody>
+
+															<tbody>
+																	<tr>
+																			<td>Savor your TasteBuds</td>
+																			<td>800</td>
+																			<td>-</td>
+																			<td>-</td>
+																			<td>-</td>
+																			<td>-</td>
+																			<td>-</td>
+																			<td>-</td>
+																	</tr>
+															</tbody>
+													</table>
+						          </div>
+									</div>
+			        </div>
+		      </div> <!-- Wallet Panel end -->
+	    </div>
   </div>
     <!-- /#page-content-wrapper -->
 </div>
