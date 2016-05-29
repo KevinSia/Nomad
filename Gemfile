@@ -27,6 +27,7 @@ gem 'figaro'
 # image upload
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
+gem 'fog'
 
 # form builder
 gem "cocoon"
