@@ -17,6 +17,7 @@ class QuestsController < ApplicationController
   end
 
   def show
+    @quest = Quest.includes(:user, :activities).find(params[:id])
   end
 
   def edit

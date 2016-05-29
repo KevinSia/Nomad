@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   get "/upcoming" => "static#upcoming", as: "upcoming"
   get "/users/:user_id/wallet" => "wallet#wallet", as: 'wallet'
   get "/teamprofile" => "static#teamprofile", as: "teamprofile"
+  # quests#index content is used in static#search
+  get '/search' => 'static#search', as: 'search'
+
 
   # Clearance routes
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
@@ -25,10 +28,9 @@ Rails.application.routes.draw do
 
   end
 
-  #routes for wallet
-
-  # quests#index content is used in static#search
-  resources :quests, only: :show
+  resources :quests, only: :show do
+    resource :wish, only: :create
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

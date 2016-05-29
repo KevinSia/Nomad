@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   include Clearance::User
 
   has_many :authentications, dependent: :destroy
-  has_many :quests
+  has_many :quests, dependent: :destroy
+  has_many :wishes, dependent: :destroy
 
   validates :first_name, presence: true
 

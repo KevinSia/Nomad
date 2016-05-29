@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160526085207) do
+ActiveRecord::Schema.define(version: 20160529141244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 20160526085207) do
     t.integer  "quest_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.string   "title"
     t.integer  "price"
     t.integer  "estimated_time"
+    t.string   "title"
     t.json     "photos"
   end
 
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20160526085207) do
   end
 
   add_index "authentications", ["user_id"], name: "index_authentications_on_user_id", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "quest_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "payments", force: :cascade do |t|
     t.integer  "quest_id"
@@ -61,6 +69,7 @@ ActiveRecord::Schema.define(version: 20160526085207) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.json     "photos"
+    t.boolean  "featured"
   end
 
   add_index "quests", ["user_id"], name: "index_quests_on_user_id", using: :btree
@@ -75,9 +84,22 @@ ActiveRecord::Schema.define(version: 20160526085207) do
     t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128, null: false
+    t.text     "bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+
+  create_table "wishes", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "user_id"
+    t.integer  "quest_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "wishes", ["quest_id"], name: "index_wishes_on_quest_id", using: :btree
+  add_index "wishes", ["user_id"], name: "index_wishes_on_user_id", using: :btree
 
 end

@@ -3,8 +3,8 @@
 <header class="banner">
   <span class="background"></span>
   <div id="bannertext">
-    <h1><center>3 Days in Japan</center></h1>
-    <h1><center>$500</center></h1>
+    <h1><center><%= @quest.title %></center></h1>
+    <h1><center>$<%= @quest.total_price %></center></h1>
   </div>
 </header>
 
@@ -23,80 +23,42 @@
       <figure class="snip1376">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sample17.jpg" alt="sample17" />
       <figcaption>
-        <h2>Linguina Nettlewater</h2>
+        <h2><%= @quest.user.fullname %></h2>
+        <!--<p><%= @quest.user.bio %></p>-->
         <p>I've been backpack around the world for the past 2 years! It's my dream to visit all the countries in the world one day :) Feel free to drop me a message to ask me about my travel. </p>
         <br/>
         <!--Join Quest-->
-      <!--Date Picker-->
-      <!--end of Date Picker-->
       </figcaption>
      </figure>
         <div>
-          <h3><strong>Be part of the Quest!</strong></h3>
-          <p><input type="date" class="datepicker" placeholder="Start Date"></p>
-          <p><input type="date" class="datepicker" placeholder="End Date"></p>
-          <!--Submit Button-->
-          <button class="btn btn-block btn-primary" type="submit" name="action">Join Quest Now</button>
+      <!--Date Picker-->
+         <%= render partial: 'wish_form' %>
+      <!--end of Date Picker-->
         </div>
     </div>
   </div>
 
-
-
 <!--end-->
 
 <!-- Activities Details-->
-    <div class="col-md-9">
-    <h1>Quest Highlights</h1>
-
-    <figure class="snip1401">
-      <img src="/assets/sakura.jpg" alt="sample67" />
-      <figcaption>
-        <h3 id="ActvTitle">Sakura Blossom</h3>
-        <p id="price">$150</p>
-        <p>Experience the full sakura blossom with your loved ones and be mesmerised!</p>
-
-        <p><a href="https://www.govoyagin.com/activities/japan-tokyo-enjoy-an-exciting-water-bus-ride-on-the-sumida-river-tokyo/5216">Website</a></p>
-
-      </figcaption><i class="ion-ios-location-outline"><h5>Shinjuku Gyoen</h5></i>
-      <a href="#"></a>
-    </figure>
-
-    <figure class="snip1401"><img src="/assets/tokyocruise.jpg" alt="sample87" />
-      <figcaption>
-        <h3 id="ActvTitle">Tokyo Bay Night Cruise</h3>
-        <p id="price">$150</p>
-        <p>Go on a romantic Tokyo Bay night cruise! This is the perfect way to end your day, and see the night view of Tokyo. </p>
-        <p><a href="https://www.govoyagin.com/activities/japan-tokyo-enjoy-an-exciting-water-bus-ride-on-the-sumida-river-tokyo/5216">Website</a></p>
-      </figcaption><i class="ion-ios-location-outline"><h5>Tokyo Bay</h5></i>
-      <a href="#"></a>
-    </figure>
-
-    <figure class="snip1401"><img src="/assets/ginza.jpg" alt="sample87" />
-      <figcaption>
-        <h3 id="ActvTitle">Ginza & Tsukiji Running</h3>
-        <p id="price">$150</p>
-        <p>Let's run together in the center of Tokyo to see Ginza, Tsukiji and Nippon bridge!</p>
-        <p><a href="https://www.govoyagin.com/activities/japan-tokyo-enjoy-an-exciting-water-bus-ride-on-the-sumida-river-tokyo/5216">Website</a></p>
-      </figcaption><i class="ion-ios-location-outline"><h5>Ginza</h5></i>
-      <a href="#"></a>
-      </figure>
-
-      <figure class="snip1401">
-        <img src="/assets/hotairballon.jpeg" alt="sample67" />
-        <figcaption>
-          <h3 id="ActvTitle">Sunrise from Hot Air Balloon</h3>
-          <p id="price">$150</p>
-          <p>How about flying with us in a hot air balloon during the beautiful sunrise? Float elegantly through the sky while watching the amazing rural landscape of rice fields below!</p>
-          <p><a href="https://www.govoyagin.com/activities/japan-tokyo-enjoy-an-exciting-water-bus-ride-on-the-sumida-river-tokyo/5216">Website</a></p>
-        </figcaption><i class="ion-ios-location-outline"><h5>Tokyo</h5></i>
-
-        <a href="#"></a>
-      </figure>
-
-    </div>
-    <br/>
-
+<div class='col-md-9'>
+  <h1>Quest Highlights</h1>
+  <% @quest.activities.each do |a| %>
+  <figure class='snip1401'>
+    <%= image_tag "sakura.jpg", alt: 'Sakura' %>
+    <figcaption>
+      <h3 id='ActvTitle'><%= a.title %></h3>
+      <p id="price">$<%= a.price %></p>
+      <p><%= a.description %></p>
+      <p>Click to learn more</p>
+    </figcaption>
+    <i class='ion-ios-location-outline'>
+    </i>
+    <%= link_to '', a.references %>
+  </figure>
+  <% end %>
+</div>
+<br/>
 <!--end of Activities Details-->
 
 <!--Comments Section-->
@@ -120,8 +82,7 @@
             <div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg')"></div>
         </div>
         <div class="comment-block">
-            <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum. Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam reprehenderit quasi
-                sapiente modi tempora at perspiciatis mollitia, dolores voluptate. Cumque, corrupti?</p>
+            <p class="comment-text">I would love to go on this trip!</p>
             <div class="bottom-comment">
                 <div class="comment-date">Aug 24, 2014 @ 2:35 PM</div>
                 <ul class="comment-actions">
@@ -137,7 +98,7 @@
             <div class="avatar" style="background-image: url('https://s3.amazonaws.com/uifaces/faces/twitter/felipenogs/128.jpg')"></div>
         </div>
         <div class="comment-block">
-            <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus iste nostrum dolorem natus recusandae incidunt voluptatum. Eligendi voluptatum ducimus architecto tempore, quaerat explicabo veniam fuga corporis totam.</p>
+            <p class="comment-text">My gosh this makes me wanna go on a trip right now!</p>
             <div class="bottom-comment">
                 <div class="comment-date">Aug 23, 2014 @ 10:32 AM</div>
                 <ul class="comment-actions">

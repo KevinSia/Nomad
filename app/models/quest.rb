@@ -1,9 +1,16 @@
 class Quest < ActiveRecord::Base
+
   has_many :activities, dependent: :destroy
+  has_many :wishes, dependent: :destroy
   belongs_to :user
+
   accepts_nested_attributes_for :activities
+
   mount_uploaders :photos, PhotosUploader
+
   scope :latest, -> { order(created_at: :desc) }
+
+  validates :title, presence: true
 
   CATEGORIES = [
     ['Friends'] * 2,
