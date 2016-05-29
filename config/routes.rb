@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   resources :quests, only: :show do
     resource :wish, only: :create
+    resource :booking, only: :create
   end
 
 

@@ -32,7 +32,11 @@
      </figure>
         <div>
       <!--Date Picker-->
-         <%= render partial: 'wish_form' %>
+          <% if @quest.featured %>
+            <%= render partial: 'booking_form' %>
+          <% else %>
+            <%= render partial: 'wish_form' %>
+          <% end %>
       <!--end of Date Picker-->
         </div>
     </div>

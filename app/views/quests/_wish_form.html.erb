@@ -1,11 +1,6 @@
-<h3>
-  <strong>Be part of the Quest!</strong>
-</h3>
 <%= form_for Wish.new, url: quest_wish_path(@quest) do |f| %>
-  <p><%= f.text_field :start_date, class: 'datepicker', placeholder: 'Start Date' %></p>
-  <p><%= f.text_field :end_date, class: 'datepicker', placeholder: 'End Date' %></p>
   <!-- <p><input type="date" class="datepicker" placeholder="Start Date"></p>
   <p><input type="date" class="datepicker" placeholder="End Date"></p> -->
   <!--Submit Button-->
-  <button class="btn btn-block btn-primary" type="submit" name="action">Wish for it now!</button>
+  <button class="btn btn-block btn-primary" type="submit" name="action">Add into wishlist!</button>
 <% end %>
