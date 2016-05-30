@@ -1,3 +1,4 @@
+<%= render partial: 'shared/session_navbar' %>
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif' rel='stylesheet' type='text/css'>
 <!-- Header -->
 <header class="banner">
@@ -66,7 +67,7 @@
     </figcaption>
     <i class='ion-ios-location-outline'>
     </i>
-    <%= link_to '', a.references %>
+    <%= link_to '', a.references, target: '_blank' %>
   </figure>
   <% end %>
 </div>
