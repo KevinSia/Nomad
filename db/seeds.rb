@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-# User.create(email: 'admin@nomad.com', password: 'nomad', first_name: 'admin')
+User.create(email: 'admin@nomad.com', password: 'nomad', first_name: 'admin')
 
 quest_1 = Quest.create(title: 'Love in The Air - Paris',duration: '3',country:'France',city:'Paris',category:'Couple',description:'Romantic couple trip',user_id:1)
 quest_1.activities.create(title:"The Louvre",description:"One of the world’s most authoritative museums, the Louvre's collection.",estimated_time:'4',location:'The Louvre',price:'180',references:"https://www.tiqets.com/en/paris-c66746/louvre-museum-skip-the-line-p973698?gclid=CjwKEAjw1Iq6BRDY_tK-9OjdmBESJABlzoY7h3pYHDZ0QLRok5riwTjVn6osM0d6ZNKF9vfRVhNUEBoChcvw_wcB",quest_id:1)

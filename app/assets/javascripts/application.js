@@ -25,13 +25,3 @@
 //= require pickadate/picker
 //= require pickadate/picker.date
 //= require_tree .
-
-jQuery(document).ready(function($){
-    $('.hero-text').typeIt({
-        content : 'I am a human Web Developer',
-        speed: 100,
-        removeAt: 13,
-        deleteNo: 6,
-        callback: function(){console.log('Completed')}
-    });
-});
