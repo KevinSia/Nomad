@@ -1,34 +1,108 @@
-<h2>Edit profile</h2>
-<% if @user.errors.any? %>
-  <div class="alert alert-danger">
-    The form contains <%= pluralize(@user.errors.count, "error") %>.
-  </div>
-  <ul>
-    <% @user.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
-<%= form_for @user do |form| %>
-  <div class='text-field'>
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
+<div id="wrapper">
+    <!-- Sidebar -->
+  <div id="sidebar-wrapper" >
+    <div class="container">
+      <ul class="sidebar-nav padding-top">
+        <div class="profile-userpic">
+          <img alt="Profile pic" src="/assets/Brian.jpg" class="img-responsive" alt="" />
+        </div>
 
-  <div class='text-field'>
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+        <div class="profile-usertitle">
+          <div class="profile-usertitle-name">
+            <%= current_user.fullname %>
+          </div>
+          <div class="profile-usertitle-job">
+            TRAVEL GURU
+          </div>
+        </div>
+        <div class="profile-usermenu">
+          <ul class="nav">
+            <li>
+              <%= link_to 'Edit profile', edit_user_path(current_user) %>
+            </li>
+            <li>
+              <%= link_to 'Post a quest', new_user_quest_path(current_user) %>
+            </li>
+            <li>
+              <a href="#wishlist">Wish list</a>
+            </li>
+            <li>
+              <a href="#wallet">Wallet</a>
+            </li>
+            <li>
+              <a href="#upcomingquest">Upcoming Quests</a>
+            </li>
+            <li>
+              <a href="#conquests">Conquests</a>
+            </li>
+            <li>
+              <a href="#">Planner (Coming soon!)</a>
+            </li>
+            <li>
+              <%= link_to 'Home', root_path %>
+            </li>
+            <li>
+              <%= link_to 'Log Out', sign_out_path, method: :delete %>
+            </li>
+          </ul>
+        </div>
+      </ul>
+    </div>
   </div>
+  <!-- /#sidebar-wrapper -->
 
-  <div class='text-area'>
-    <%= form.label :bio %>
-    <%= form.text_area :bio %>
-  </div>
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+	    <div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<h2>Edit profile</h2>
+							<% if @user.errors.any? %>
+								<div class="alert alert-danger">
+									The form contains <%= pluralize(@user.errors.count, "error") %>.
+								</div>
+								<ul>
+									<% @user.errors.full_messages.each do |message| %>
+										<li><%= message %></li>
+									<% end %>
+								</ul>
+							<% end %>
+							<%= form_for @user do |form| %>
+								<div class='text-field'>
+									<%= form.label :first_name %>
+									<%= form.text_field :first_name %>
+								</div>
 
-  <%= render partial: '/users/form', object: form %>
+								<div class='text-field'>
+									<%= form.label :last_name %>
+									<%= form.text_field :last_name %>
+								</div>
 
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
-<% end %>
+								<div class='text-area'>
+									<%= form.label :bio %>
+									<%= form.text_area :bio %>
+								</div>
 
+								<%= render partial: '/users/form', object: form %>
+
+								<div class="submit-field">
+									<%= form.submit %>
+								</div>
+							<% end %>
+
+						</div>
+					</div>
+
+	    </div> <!-- Container end -->
+  </div> <!-- /#page-content-wrapper -->
+</div> <!-- /#wrapper -->
+
+
+
+
+<script>
+$("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+</script>

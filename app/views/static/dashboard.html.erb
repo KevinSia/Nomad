@@ -12,7 +12,7 @@
             <%= current_user.fullname %>
           </div>
           <div class="profile-usertitle-job">
-            Nomad
+            TRAVEL GURU
           </div>
         </div>
         <div class="profile-usermenu">
@@ -24,16 +24,16 @@
               <%= link_to 'Post a quest', new_user_quest_path(current_user) %>
             </li>
             <li>
-              <a href="#">Wishlist</a>
+              <a href="#wishlist">Wish list</a>
             </li>
             <li>
-              <a href="#">Wallet</a>
+              <a href="#wallet">Wallet</a>
             </li>
             <li>
-              <a href="#">Upcoming Quests</a>
+              <a href="#upcomingquest">Upcoming Quests</a>
             </li>
             <li>
-              <a href="#">Conquests</a>
+              <a href="#conquests">Conquests</a>
             </li>
             <li>
               <a href="#">Planner (Coming soon!)</a>
@@ -57,7 +57,7 @@
 		      <div class="row">
 		          <div class="col-md-12">
 		              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-		              <span>Did you know you could hide the sidebar?
+		              <span style="font-size: 1em">Did you know you could hide the sidebar?
 									 Try it! Click on the menu toggle.<span>
 		              <hr>
 							</div>
@@ -88,11 +88,6 @@
 																	</span>
 															</a>
 															<a href="#" class="list-group-item">
-																	<i class="fa fa-bolt fa-fw"></i> Server Crashed!
-																	<span class="pull-right text-muted small"><em>11:13 AM</em>
-																	</span>
-															</a>
-															<a href="#" class="list-group-item">
 																	<i class="fa fa-money fa-fw"></i> Payment Received
 																	<span class="pull-right text-muted small"><em>Yesterday</em>
 																	</span>
@@ -105,10 +100,10 @@
 									</div>
 									<!-- /.panel -->
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-8">
 				          <div class="panel panel-default">
-				              <div class="panel-heading">
-				                <i class="fa fa-heart fa-fw"></i> Wishlist
+				              <div id="wishlist" class="panel-heading">
+				                <i class="fa fa-heart fa-fw"></i> Wish list
 				              </div>
 				              <div class="panel-body">
 				              	<table class='table table-hover'>
@@ -131,10 +126,38 @@
 					</div> <!-- End of row -->
 
 					<div class="row">
-							<div class="col-md-12">
+						<div class="col-md-6">
 									<div class="panel panel-default">
+											<div id="upcomingquests" class="panel-heading">
+													<i class="fa fa-map-marker fa-fw"></i> Upcoming Quests
+											</div>
+											<!-- /.panel-heading -->
+											<div class="panel-body">
+
+											</div>
+											<!-- /.panel-body -->
+									</div>
+									<!-- /.panel -->
+							</div>
+							<div class="col-md-6">
+									<div class="panel panel-default">
+											<div id="conquests" class="panel-heading">
+												<i class="fa fa-flag-checkered fa-fw"></i> Conquests
+											</div>
+											<div class="panel-body">
+
+											</div>
+									</div>
+							</div>
+					</div> <!-- End of row -->
+
+
+
+					<div class="row">
+							<div class="col-md-12">
+									<div id="wallet" class="panel panel-default">
 						          <div class="panel-heading">
-						            Wallet
+						            <i class="fa fa-heart" fa-fw></i> Wallet
 						          </div>
 						          <div class="panel-body">
 													<h4>Payment history</h4>
@@ -202,7 +225,7 @@
 															 <tbody>
 																<tr>
 																<td>Sharm El Sheikh</td>
-																<td>800</td>
+																<td>1000</td>
 																<td>300</td>
 																<td>100</td>
 																<td>30/4/2016</td>
@@ -225,15 +248,14 @@
 																	</tr>
 															</tbody>
 													</table>
-						          </div>
-									</div>
-			        </div>
-		      </div> <!-- Wallet Panel end -->
-	    </div>
-  </div>
-    <!-- /#page-content-wrapper -->
-</div>
-<!-- /#wrapper -->
+						          </div> <!-- Wallet Panel Body -->
+									</div> <!-- Wallet Panel -->
+			        </div> <!-- Wallet Column -->
+		      </div> <!-- Wallet row -->
+	    </div> <!-- Container end -->
+  </div> <!-- /#page-content-wrapper -->
+</div> <!-- /#wrapper -->
+
 
 
 

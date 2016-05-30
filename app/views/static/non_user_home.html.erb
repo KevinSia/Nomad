@@ -12,7 +12,7 @@
   <div class="hero-welcome">
       <div class="site-wrapper-inner">
         <div class="hero-text">
-          It's time to go on an adventure.
+          	It's time to go on an adventure.
         </div>
 
       <div class="row">
@@ -26,26 +26,39 @@
 
 <section id="deals">
   <div class="container-fluid padding" style="background-color:#f7f7f7">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1> How does it work?<br>
+							<span class="lead">Simple.</span>
+					</h1>
+				</div>
+			</div>
+		</div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 text-center">
-              <h2>Find a Quest</h2>
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							<%= image_tag('step1.png') %>
+              <h3>Create a Quest</h3>
+              <p class="lead">
+                Been an awesome holiday before?<br>
+								Post it up!
               </p>
             </div>
 
             <div class="col-md-4 text-center">
-              <h2>Add to wish list</h2>
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							<%= image_tag('step2.png') %>
+              <h3>Share it</h3>
+              <p class="lead">
+                Let fellow Nomads add to their wish list.
               </p>
             </div>
 
             <div class="col-md-4 text-center">
-              <h2>Share and begin your adventure</h2>
-              <p>
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							<%= image_tag('step3.png') %>
+              <h3>Get paid</h3>
+              <p class="lead">
+                Bigger the wish list the higher your income!
               </p>
             </div>
           </div>
@@ -58,14 +71,22 @@
   <%= render "shared/carousel" %>
 </section>
 
-<div class="container">
-  <hr>
+<div class="container-fluid" style="background-color:rgb(34, 34, 34);">
+	<div class="row padding">
+		<div class="col-md-12 text-center">
+			<h2 style="color:white;">
+				HELP US, HELP YOU!<br>
+				<span class=lead>
+					Add your favorite quests to your wish list and we will do the rest.<br>
+					Don't forget to share!
+				</span>
+			</h2>
+		</div>
+	</div>
 </div>
 
 <section id="grid-wrap">
-  <div class="container">
     <%= render "shared/grid" %>
-  </div>
 </section>
 
 
