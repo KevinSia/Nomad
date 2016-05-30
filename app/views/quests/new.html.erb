@@ -1,5 +1,6 @@
-<h1>Make new quest</h1>
-<section style="background:#efefe9;">
+<%= render 'shared/session_navbar'%>
+
+<section style="background:#efefe9;" class="padding-top">
     <!-- <div class='container'> -->
   <div class='row'>
     <%= form_for [current_user, @quest] do |q| %>
@@ -65,3 +66,7 @@
     </div> <!-- row -->
   </div>
 </section>
+
+<footer>
+	<%= render 'shared/footer' %>
+</footer>
