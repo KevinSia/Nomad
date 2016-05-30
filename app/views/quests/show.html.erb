@@ -36,18 +36,21 @@
         <!--Join Quest-->
       </figcaption>
      </figure>
-        <div>
+      <div>
       <!--Date Picker-->
-          <% if @quest.featured %>
-            <%= render partial: 'quests/booking_form' %>
-          <% elsif @quest.is_wished?(current_user) %>
-            <h3>You have wished on this quest</h3>
-            <%= link_to 'See your wishlist here', dashboard_path %>
-          <% else %>
-            <%= render partial: 'quests/wish_form' %>
-          <% end %>
+        <% if @quest.featured %>
+          <%= render partial: 'quests/booking_form' %>
+        <% elsif @quest.is_wished?(current_user) %>
+          <h3>You have wished on this quest</h3>
+          <%= link_to 'See your wishlist here', dashboard_path, class: 'btn btn-primary' %>
+        <% else %>
+          <%= render partial: 'quests/wish_form' %>
+        <% end %>
+        <%= link_to '#', class: 'btn btn-block btn-primary' do %>
+          <span class='glyphicon glyphicon-user'></span>&nbsp;Share
+        <% end %>
       <!--end of Date Picker-->
-        </div>
+      </div>
     </div>
   </div>
 
