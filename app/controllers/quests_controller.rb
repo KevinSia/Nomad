@@ -18,6 +18,7 @@ class QuestsController < ApplicationController
 
   def show
     @quest = Quest.includes(:user, :activities).find(params[:id])
+    @client_token = Braintree::ClientToken.generate
   end
 
   def edit
