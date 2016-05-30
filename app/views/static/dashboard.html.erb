@@ -21,7 +21,7 @@
               <%= link_to 'Edit profile', edit_user_path(current_user) %>
             </li>
             <li>
-              <a href="#">Post a quest</a>
+              <%= link_to 'Post a quest', new_user_quest_path(current_user) %>
             </li>
             <li>
               <a href="#">Wishlist</a>
@@ -111,9 +111,20 @@
 				                <i class="fa fa-heart fa-fw"></i> Wishlist
 				              </div>
 				              <div class="panel-body">
-				                <%= link_to '#' do %>
-				                  <%=image_tag("wish_list.png", size:"100x100")%>
-				                <% end %>
+				              	<table class='table table-hover'>
+				              		<th>Quest Title</th>
+				              		<th>Wished on</th>
+				              		<th>Current Wish Count</th>
+				              		<th>Link</th>
+				              		<% current_user.wishes.each do |wish| %>
+				              			<tr>
+				              				<td><%= wish.quest.title %></td>
+				              				<td><%= wish.created_at.strftime('%d/%m/%Y') %></td>
+				              				<td><%= wish.quest.wishes.count %></td>
+				              				<td><%= link_to 'See this quest', quest_path(wish.quest) %></td>
+				              			</tr>
+				              		<% end %>
+				              	</table>
 				              </div>
 				          </div>
 							</div>

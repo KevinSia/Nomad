@@ -1,0 +1,12 @@
+<h3>
+  <strong>Take on the Quest!</strong>
+</h3>
+<%= form_for Booking.new, url: quest_booking_path(@quest) do |f| %>
+  <p><%= f.text_field :start_date, class: 'datepicker', placeholder: 'Start Date' %></p>
+  <p><%= f.text_field :end_date, class: 'datepicker', placeholder: 'End Date' %></p>
+  <%= f.hidden_field :quest_id, value: @quest.id %>
+  <!-- <p><input type="date" class="datepicker" placeholder="Start Date"></p>
+  <p><input type="date" class="datepicker" placeholder="End Date"></p> -->
+  <!--Submit Button-->
+  <button class="btn btn-block btn-primary" type="submit" name="action">Book now!</button>
+<% end %>
