@@ -1,57 +1,26 @@
 <div class="grid-wrap js">
   <ul class="grid swipe-down" id="grid">
     <li class="title-box text-right">
-      <h2>Checkout these latest quests</a></h2>
-    </li>
-    <% @quests.each do |quest| %>
+      <h2>All hail the latest quests from the community!<br></h2>
+		</li>
+    <% @quests.each.with_index do |quest, index| %>
         <li>
             <%= link_to quest_path(quest) do %>
-                <%= image_tag(quest.photos? ? quest.photos.first : 'dummy.png') %>
+                <%= image_tag("dummy_#{index + 1}.jpg") %>
                 <h3><%= quest.title %></h3>
             <% end %>
         </li>
     <% end %>
     <li><a href="#"><%= image_tag("mtfuji.jpg") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-    <li><a href="#"><%= image_tag("dummy.png") %><h3>A fantastic title</h3></a></li>
-  </ul>
+    <li><a href="#"><%= image_tag("dummy_20.jpg") %><h3>Visit the cave with your loved ones</h3></a></li>
+    <li><a href="#"><%= image_tag("dummy_21.jpg") %><h3>Day Of The Stars</h3></a></li>
+    <li><a href="#"><%= image_tag("dummy_22.jpg") %><h3>Bounty Celebration</h3></a></li>
+		<li><a href="#"><%= image_tag("dummy_23.jpg") %><h3>Woodland Fest</h3></a></li>
+		<li><a href="#"><%= image_tag("dummy_24.jpg") %><h3>Celebration Of Nightfall</h3></a></li>
+		<li><a href="#"><%= image_tag("dummy_25.jpg") %><h3>Celebration Of Water</h3></a></li>
+		<li><a href="#"><%= image_tag("dummy_26.jpg") %><h3>Queen's Fest</h3></a></li>
+		<li><a href="#"><%= image_tag("dummy_27.jpg") %><h3>New Year's Festival</h3></a></li>
+	</ul>
 </div>
 
 
