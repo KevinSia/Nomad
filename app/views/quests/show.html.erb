@@ -1,7 +1,11 @@
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:700|Droid+Serif' rel='stylesheet' type='text/css'>
 <!-- Header -->
 <header class="banner">
-  <span class="background"></span>
+	<% if @quest.featured? %>
+  <span class="background"><%= image_tag('mtfuji2.jpg') %></span>
+	<% else %>
+	<span class='background'></span>
+	<% end %>
   <div id="bannertext">
     <h1><center><%= @quest.title %></center></h1>
     <h1><center>$<%= @quest.total_price %></center></h1>
