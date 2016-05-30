@@ -37,6 +37,9 @@ gem 'puma'
 # datepicker
 gem 'pickadate-rails'
 
+# payment
+gem 'braintree'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
