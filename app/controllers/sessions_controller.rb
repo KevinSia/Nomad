@@ -5,10 +5,9 @@ class SessionsController < Clearance::SessionsController
 
     sign_in(@user) do |status|
       if status.success?
-        flash[:success] = 'Welcome to Nomad :)'
         redirect_back_or url_after_create
       else
-        flash.now.notice = status.failure_message
+        # flash.now.notice = status.failure_message
         render template: "sessions/new", status: :unauthorized
       end
     end
@@ -16,7 +15,6 @@ class SessionsController < Clearance::SessionsController
 
   def destroy
     sign_out
-    flash[:success] = 'Signed Out'
     redirect_to url_after_destroy
   end
 
@@ -28,11 +26,11 @@ class SessionsController < Clearance::SessionsController
       user = authentication.user
       authentication.update_token(auth_hash)
       @next = root_url
-      flash[:success] = "Signed in!"
+      # flash[:success] = "Signed in!"
     else
       user = User.create_with_auth_and_hash(authentication,auth_hash)
       @next = edit_user_path(user)
-      flash[:success] = "User created - please confirm or edit details..."
+      # flash[:success] = "User created - please confirm or edit details..."
     end
     sign_in(user)
     redirect_to @next, :notice => @notice
